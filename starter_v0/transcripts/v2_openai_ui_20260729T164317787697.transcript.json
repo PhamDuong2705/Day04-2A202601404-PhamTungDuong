@@ -1,0 +1,84 @@
+{
+  "transcript_id": "v2_openai_ui_20260729T164317787697",
+  "version": "v2",
+  "artifact_version": "v2+p1fa3ba759d6a+t3b8c8c56cb5b",
+  "prompt_hash": "1fa3ba759d6a6c13c0412f860e206bfdc2e1c3b5faa8f1c33163219a4d0da414",
+  "tools_hash": "3b8c8c56cb5b798e8a19bc5baadc1c974713419deaa935d05e67c0cfb364a0ff",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "system_prompt": "C:\\Users\\anho2\\OneDrive\\Desktop\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "C:\\Users\\anho2\\OneDrive\\Desktop\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-07-29T16:43:17",
+  "updated_at": "2026-07-29T16:44:53",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-07-29T16:43:34",
+      "user": "h",
+      "status": "answered",
+      "assistant_text": "It seems like your message might have been cut off. How can I assist you today?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "It seems like your message might have been cut off. How can I assist you today?",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "ended_at": "2026-07-29T16:43:40"
+    },
+    {
+      "turn_index": 2,
+      "started_at": "2026-07-29T16:43:47",
+      "user": "hello",
+      "status": "answered",
+      "assistant_text": "Hello! How can I assist you today?",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": "Hello! How can I assist you today?",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [],
+      "ended_at": "2026-07-29T16:43:49"
+    },
+    {
+      "turn_index": 3,
+      "started_at": "2026-07-29T16:44:01",
+      "user": "kết quả world cup 2026",
+      "status": "provider_error",
+      "assistant_text": "❌ Lỗi: UnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f527' in position 0: character maps to <undefined>",
+      "rounds": [],
+      "tool_events": [],
+      "error": "UnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f527' in position 0: character maps to <undefined>",
+      "ended_at": "2026-07-29T16:44:02"
+    },
+    {
+      "turn_index": 4,
+      "started_at": "2026-07-29T16:44:46",
+      "user": "lấy news",
+      "status": "provider_error",
+      "assistant_text": "❌ Lỗi: UnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f527' in position 0: character maps to <undefined>",
+      "rounds": [],
+      "tool_events": [],
+      "error": "UnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f527' in position 0: character maps to <undefined>",
+      "ended_at": "2026-07-29T16:44:48"
+    },
+    {
+      "turn_index": 5,
+      "started_at": "2026-07-29T16:44:51",
+      "user": "news",
+      "status": "provider_error",
+      "assistant_text": "❌ Lỗi: UnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f527' in position 0: character maps to <undefined>",
+      "rounds": [],
+      "tool_events": [],
+      "error": "UnicodeEncodeError: 'charmap' codec can't encode character '\\U0001f527' in position 0: character maps to <undefined>",
+      "ended_at": "2026-07-29T16:44:53"
+    }
+  ]
+}

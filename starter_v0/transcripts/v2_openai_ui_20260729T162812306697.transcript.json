@@ -1,0 +1,28 @@
+{
+  "transcript_id": "v2_openai_ui_20260729T162812306697",
+  "version": "v2",
+  "artifact_version": "v2+p1fa3ba759d6a+t3b8c8c56cb5b",
+  "prompt_hash": "1fa3ba759d6a6c13c0412f860e206bfdc2e1c3b5faa8f1c33163219a4d0da414",
+  "tools_hash": "3b8c8c56cb5b798e8a19bc5baadc1c974713419deaa935d05e67c0cfb364a0ff",
+  "provider": "openai",
+  "model": "gpt-4o-mini",
+  "system_prompt": "C:\\Users\\anho2\\OneDrive\\Desktop\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "C:\\Users\\anho2\\OneDrive\\Desktop\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-07-29T16:28:12",
+  "updated_at": "2026-07-29T16:28:34",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-07-29T16:28:34",
+      "user": "12",
+      "status": "provider_error",
+      "assistant_text": "❌ Lỗi: RuntimeError: Missing API key env var: OPENAI_API_KEY",
+      "rounds": [],
+      "tool_events": [],
+      "error": "RuntimeError: Missing API key env var: OPENAI_API_KEY",
+      "ended_at": "2026-07-29T16:28:34"
+    }
+  ]
+}

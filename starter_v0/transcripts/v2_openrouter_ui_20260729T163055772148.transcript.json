@@ -1,0 +1,28 @@
+{
+  "transcript_id": "v2_openrouter_ui_20260729T163055772148",
+  "version": "v2",
+  "artifact_version": "v2+p1fa3ba759d6a+t3b8c8c56cb5b",
+  "prompt_hash": "1fa3ba759d6a6c13c0412f860e206bfdc2e1c3b5faa8f1c33163219a4d0da414",
+  "tools_hash": "3b8c8c56cb5b798e8a19bc5baadc1c974713419deaa935d05e67c0cfb364a0ff",
+  "provider": "openrouter",
+  "model": "openai/gpt-4o-mini",
+  "system_prompt": "C:\\Users\\anho2\\OneDrive\\Desktop\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "C:\\Users\\anho2\\OneDrive\\Desktop\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 4,
+  "created_at": "2026-07-29T16:30:55",
+  "updated_at": "2026-07-29T16:30:59",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-07-29T16:30:58",
+      "user": "sdasd",
+      "status": "provider_error",
+      "assistant_text": "❌ Lỗi: APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402, 'metadata': {'limit_source': 'openrouter_credits', 'remedy_hint': 'Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.'}}}",
+      "rounds": [],
+      "tool_events": [],
+      "error": "APIStatusError: Error code: 402 - {'error': {'message': 'Insufficient credits. This account never purchased credits. Make sure your key is on the correct account or org, and if so, purchase more at https://openrouter.ai/settings/credits', 'code': 402, 'metadata': {'limit_source': 'openrouter_credits', 'remedy_hint': 'Add credits at https://openrouter.ai/settings/credits, or lower max_tokens / prompt size to fit your remaining balance.'}}}",
+      "ended_at": "2026-07-29T16:30:59"
+    }
+  ]
+}
