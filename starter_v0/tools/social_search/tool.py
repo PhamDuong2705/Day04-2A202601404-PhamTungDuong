@@ -1,52 +1,36 @@
 from __future__ import annotations
 
-import os
 from typing import Any
 
-import requests
-
-from tools._shared import TIMEOUT, err
-
-
-def _twitter_get(path: str, params: dict[str, Any]) -> dict[str, Any]:
-    key = os.getenv("RAPIDAPI_KEY")
-    host = os.getenv("RAPIDAPI_TWITTER_HOST", "twitter-api45.p.rapidapi.com")
-    if not key:
-        raise RuntimeError("Missing RAPIDAPI_KEY env var")
-    response = requests.get(
-        f"https://{host}{path}",
-        params=params,
-        headers={"x-rapidapi-key": key, "x-rapidapi-host": host},
-        timeout=TIMEOUT,
-    )
-    response.raise_for_status()
-    return response.json()
-
-
-def _tweet_item(raw: dict[str, Any]) -> dict[str, Any]:
-    handle = raw.get("screen_name") or (raw.get("author") or {}).get("screen_name") or ""
-    tweet_id = raw.get("tweet_id") or raw.get("id") or ""
-    text = (raw.get("text") or "").strip()
-    return {
-        "title": text.split("\n")[0][:120],
-        "summary": text,
-        "url": f"https://x.com/{handle}/status/{tweet_id}" if handle and tweet_id else "",
-        "source": f"@{handle}" if handle else "x.com",
-        "date": raw.get("created_at"),
-        "metrics": {"favorites": raw.get("favorites"), "retweets": raw.get("retweets"), "views": raw.get("views")},
-    }
-
-
-def _tweets_from(data: dict[str, Any], limit: int) -> list[dict[str, Any]]:
-    raw_items = data.get("timeline") or data.get("tweets") or []
-    items = [_tweet_item(item) for item in raw_items if item.get("tweet_id") or item.get("id")]
-    return items[: int(limit or 5)]
+from tools._shared import err
+from tools._tavily_social import search_social_web
 
 
 def search_tweets(query: str = "", search_type: str = "Latest", limit: int = 5) -> dict[str, Any]:
     try:
-        data = _twitter_get("/search.php", {"query": query, "search_type": search_type})
-        return {"tool": "search_tweets", "query": query, "search_type": search_type, "items": _tweets_from(data, limit)}
+        normalized_query = (query or "").strip()
+        if not normalized_query:
+            raise ValueError("query is required")
+        normalized_type = (search_type or "Latest").strip().title()
+        if normalized_type not in {"Latest", "Top"}:
+            raise ValueError("search_type must be Latest or Top")
+
+        intent = "latest" if normalized_type == "Latest" else "popular"
+        social_query = f'{intent} public X posts about "{normalized_query}" site:x.com'
+        items = search_social_web(
+            query=social_query,
+            limit=limit,
+            time_range="month" if normalized_type == "Latest" else "year",
+        )
+        if normalized_type == "Top":
+            items.sort(key=lambda item: float(item.get("score") or 0), reverse=True)
+        return {
+            "tool": "search_tweets",
+            "query": normalized_query,
+            "search_type": normalized_type,
+            "provider": "tavily_social_fallback",
+            "items": items,
+        }
     except Exception as exc:
         return err("search_tweets", exc)
 

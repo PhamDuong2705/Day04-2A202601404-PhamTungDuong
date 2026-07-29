@@ -1,63 +1,82 @@
-# starter_v0 — tool declarations (intentionally vague).
-# Names and descriptions here are a rough first draft. Routing rules, name->handle
-# mapping, arg conventions (news/timeframe/Top), and the send-confirmation boundary
-# are NOT spelled out anywhere yet. Your job is to make these declarations + the
-# system prompt good enough that the agent routes correctly on the eval.
+# v2 — explicit research-agent tool declarations.
+# Descriptions define routing boundaries and argument conventions. Keep names and
+# schemas synchronized with the local registry and evaluation datasets.
 #
 # If you rename a tool, keep the name in sync across:
 #   this file  ->  tools/__init__.py (TOOL_FUNCTIONS)  ->  data/eval_base.json + data/eval_research_extension.json
 tools:
   # ---------------- Core tools ----------------
   - name: clarify
-    description: "Gửi một câu hỏi cho người dùng."
+    description: "Tạm dừng để hỏi người dùng khi còn thiếu input bắt buộc hoặc cần xác nhận hành động. Luôn truyền rõ response_type: text khi thiếu handle/URL/thông tin; yes_no trước gửi, đăng hoặc xuất bản; choice chỉ khi có danh sách options. Không dùng cho câu hỏi meta hoặc khi thông tin đã có trong hội thoại."
     parameters:
       type: object
       properties:
-        question: {type: string, default: "", description: "Câu hỏi"}
-        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Kiểu trả lời"}
-        options: {type: array, default: [], items: {type: string}, description: "Các lựa chọn"}
-      required: [question]
+        question: {type: string, default: "", description: "Câu hỏi cụ thể cần người dùng trả lời"}
+        response_type: {type: string, enum: [text, yes_no, choice], default: "text", description: "Bắt buộc truyền rõ ở mọi call: text cho thông tin mở, yes_no cho xác nhận hành động, choice khi có options"}
+        options: {type: array, default: [], items: {type: string}, description: "Các lựa chọn, chỉ dùng với response_type=choice"}
+      required: [question, response_type]
 
   - name: timeline
-    description: "Lấy các bài đăng gần đây."
+    description: "Lấy bài đăng gần đây CỦA một tài khoản cụ thể. Dùng khi người dùng nêu người hoặc account; map tên công khai sang screenname và truyền handle không có @. Không dùng để tìm thảo luận theo chủ đề; nếu chưa biết tài khoản thì gọi clarify."
     parameters:
       type: object
       properties:
-        screenname: {type: string, default: "", description: "Tên tài khoản"}
-        limit: {type: integer, default: 5, description: "Số lượng"}
-      required: [screenname]
+        screenname: {type: string, default: "", description: "Handle tài khoản không có ký tự @"}
+        limit: {type: integer, default: 5, description: "Số bài cần lấy; mặc định 5 nếu người dùng không chỉ định"}
+      required: [screenname, limit]
 
   - name: social_search
-    description: "Tìm trên mạng xã hội."
+    description: "Tìm bài đăng công khai THEO từ khóa hoặc chủ đề trên mạng xã hội. Không dùng để lấy timeline của một account cụ thể. Luôn truyền search_type=Top khi người dùng nói phổ biến/top/nổi bật; nếu không thì Latest. Truyền limit theo số lượng người dùng yêu cầu, mặc định 5."
     parameters:
       type: object
       properties:
-        query: {type: string, default: "", description: "Từ khóa"}
-        search_type: {type: string, enum: [Latest, Top], default: "Latest", description: "Cách sắp xếp"}
-        limit: {type: integer, default: 5, description: "Số lượng"}
-      required: [query]
+        query: {type: string, default: "", description: "Từ khóa hoặc chủ đề cần tìm"}
+        search_type: {type: string, enum: [Latest, Top], default: "Latest", description: "Latest cho bài mới; Top cho bài phổ biến hoặc nổi bật"}
+        limit: {type: integer, default: 5, description: "Số bài cần lấy; mặc định 5"}
+      required: [query, search_type, limit]
 
   - name: lookup
-    description: "Tra cứu thông tin trên internet."
+    description: "Tìm nguồn trên web khi chưa có URL cụ thể. Với tin, tin tức, news hoặc sự kiện mới, luôn truyền topic=news; với kiến thức chung truyền topic=general. Query phải là chủ đề ngắn gọn, bỏ từ điều khiển như 'tin', 'tin tức', 'hôm nay'; ví dụ 'Tin AI hôm nay' thành query='AI', topic='news', timeframe='day'. Quy đổi hôm nay=day, tuần này=week, tháng này=month, năm nay=year. Không dùng để đọc một URL đã có."
     parameters:
       type: object
       properties:
-        query: {type: string, default: "", description: "Truy vấn"}
-        topic: {type: string, enum: [general, news], default: "general", description: "Phân loại"}
-        timeframe: {type: string, enum: [day, week, month, year], default: "week", description: "Khoảng thời gian"}
+        query: {type: string, default: "", description: "Chủ đề tìm kiếm ngắn gọn, không kèm từ điều khiển thời gian hoặc loại tin"}
+        topic: {type: string, enum: [general, news], default: "general", description: "Bắt buộc truyền rõ: news cho tin tức/sự kiện mới, general cho kiến thức chung"}
+        timeframe: {type: string, enum: [day, week, month, year], default: "week", description: "Bắt buộc truyền rõ: hôm nay=day, tuần=week, tháng=month, năm=year"}
         max_results: {type: integer, default: 5, description: "Số kết quả"}
-      required: [query]
+      required: [query, topic, timeframe]
+
+  - name: citation_audit
+    description: "Tool local mới của nhóm: kiểm tra và làm sạch research items đã có trước khi gọi format. Dùng sau lookup/fetch khi đã có title, summary và URL; loại URL lỗi hoặc trùng, kiểm tra title/summary/source và trả items hợp lệ. Không dùng để tìm kiếm, đọc URL, fact-check hoặc tự tạo bản tin."
+    parameters:
+      type: object
+      properties:
+        items:
+          type: array
+          default: []
+          description: "Danh sách kết quả nghiên cứu cần kiểm tra trước khi format"
+          items:
+            type: object
+            properties:
+              title: {type: string}
+              url: {type: string}
+              source: {type: string}
+              summary: {type: string}
+              section: {type: string}
+        require_summary: {type: boolean, default: true, description: "Loại item thiếu summary khi true"}
+        deduplicate: {type: boolean, default: true, description: "Loại URL trùng khi true"}
+      required: [items]
 
   - name: fetch
-    description: "Lấy nội dung từ một địa chỉ."
+    description: "Đọc nội dung nguồn khi đã có URL cụ thể trong request hoặc conversation. Giữ nguyên URL người dùng cung cấp. Không tự bịa URL và không dùng fetch để tìm kiếm khi chưa có URL; trường hợp thiếu URL phải gọi clarify."
     parameters:
       type: object
       properties:
-        url: {type: string, default: "", description: "Địa chỉ"}
+        url: {type: string, default: "", description: "URL http/https cụ thể cần đọc"}
       required: [url]
 
   - name: format
-    description: "Trình bày dữ liệu đã có thành văn bản."
+    description: "Trình bày các items ĐÃ CÓ thành Markdown; không tìm nguồn, đọc URL hoặc thêm fact mới. Chỉ format sau khi items có title/summary/source/URL; ưu tiên chạy citation_audit trước cho bản tin có trích dẫn. Dùng daily_ai_vn cho AI News Digest, brief cho tóm tắt ngắn, bullets cho danh sách, sections cho nội dung theo mục và thread cho chuỗi bài."
     parameters:
       type: object
       properties:
@@ -79,13 +98,13 @@ tools:
 
   # ---------------- Bonus tools ----------------
   - name: send
-    description: "Gửi một đoạn văn bản đi."
+    description: "Hành động ngoài hệ thống để gửi nội dung. Không dùng như cách trả lời chat. Chỉ gọi sau khi người dùng đã xác nhận rõ đúng nội dung/hành động; khi đó truyền confirmed=true. Nếu chưa xác nhận, gọi clarify với response_type=yes_no thay vì gọi send."
     parameters:
       type: object
       properties:
         text: {type: string, default: "", description: "Nội dung"}
-        confirmed: {type: boolean, default: false, description: "Cờ xác nhận"}
-      required: [text]
+        confirmed: {type: boolean, default: false, description: "Phải là true sau xác nhận rõ ràng của người dùng"}
+      required: [text, confirmed]
 
   - name: policy
     description: "Tìm trong tài liệu nội bộ."
