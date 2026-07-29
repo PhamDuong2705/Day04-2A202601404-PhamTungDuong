@@ -9,6 +9,57 @@
 - **Provider/model:** OpenRouter / `openai/gpt-4o-mini`
 - **Final artifact:** `v3+pd00b02dd7417+tae50b7488aab`
 
+## Phân công công việc
+
+### Thành viên 1 — Agent, Prompt và Eval Lead (Phạm Tùng Dương)
+- **Chịu trách nhiệm:**
+  - Chạy baseline v0.
+  - Đọc run JSON và phân tích lỗi.
+  - Quản lý `system_prompt.md`.
+  - Quản lý routing trong `tools.yaml`.
+  - Xây dựng các giả thuyết v1, v2, v3.
+  - Chạy base eval sau mỗi version.
+  - Cập nhật `version_log.csv`.
+  - Kiểm tra metric và provider errors.
+  - Viết 4 group eval case: 2 single-turn, 2 multi-turn.
+- **Các version đề xuất:**
+  - **v0:** starter nguyên bản.
+  - **v1:** sửa missing information và confirmation boundary.
+  - **v2:** thêm workflow AI News Digest và mô tả tool rõ hơn.
+  - **v3:** sửa lỗi còn lại sau group eval/demo.
+
+### Thành viên 2 — Tool và API Lead (Bế Nguyễn Hà Sơn)
+- **Chịu trách nhiệm:**
+  - Smoke-test Tavily và Firecrawl.
+  - Xử lý thay thế RapidAPI cho timeline/social_search.
+  - Viết tool mới `citation_audit`.
+  - Tạo:
+    - `tools/citation_audit/tool.py`
+    - `tools/citation_audit/TOOL.md`
+  - Đăng ký tool trong `tools/init.py`.
+  - Soạn schema tool để Thành viên 1 đưa vào `tools.yaml`.
+  - Viết smoke test cho tool.
+  - Kiểm tra tool không làm lộ API key.
+  - Viết 3 group eval case: 2 single-turn, 1 multi-turn.
+- **Tool `citation_audit`:**
+  - Nhận danh sách items.
+  - Kiểm tra title, url, source, summary.
+  - Loại URL trùng.
+  - Tách item hợp lệ và item lỗi.
+  - Trả danh sách sạch cho format.
+
+### Thành viên 3 — UI, Demo và Report Lead (Hồ Lương An)
+- **Chịu trách nhiệm:**
+  - Tạo `app.py` bằng Streamlit.
+  - Tái sử dụng `run_model_tool_loop` trong `chat.py`.
+  - Hiển thị: User request, Final response, Tool name và arguments, Tool result/error, Round, Provider/model/version.
+  - Lưu transcript.
+  - Chuẩn bị 3 kịch bản demo.
+  - Viết Report phần A.
+  - Tổng hợp evidence để viết Report phần B.
+  - Chuẩn bị public URL/tunnel nếu cần.
+  - Viết 3 group eval case: 1 single-turn, 2 multi-turn.
+
 ---
 
 # PHẦN A — Giới thiệu agent
