@@ -41,6 +41,53 @@ def trim_history(history: list[dict[str, str]], window: int) -> list[dict[str, s
     return history[-window * 2:]
 
 
+def initial_tool_choice_for(user_text: str) -> str | None:
+    """Require first-round routing for clear research or external-action intents.
+
+    Live chat normally leaves tool choice on auto so ordinary conversation can
+    be answered directly. Small models may still ask a required clarification
+    as plain text, which makes live behavior diverge from the eval contract.
+    These markers only force the model to choose a tool; the prompt and schemas
+    remain responsible for choosing the correct one.
+    """
+    normalized = user_text.casefold()
+    if re.search(r"https?://", normalized):
+        return "required"
+
+    tool_intent_markers = (
+        "bản tin",
+        "bài viết",
+        "đọc nguồn",
+        "tóm tắt",
+        "tin tức",
+        "nguồn",
+        "nghiên cứu",
+        "kết quả",
+        "tìm kiếm",
+        "tìm tin",
+        "tweet",
+        "timeline",
+        "mạng xã hội",
+        "chính sách",
+        "trích dẫn",
+        "gửi",
+        "đăng",
+        "xuất bản",
+        "telegram",
+        "digest",
+        "article",
+        "research",
+        "news",
+        "source",
+        "citation",
+        "paper",
+        "publish",
+        "post",
+        "send",
+    )
+    return "required" if any(marker in normalized for marker in tool_intent_markers) else None
+
+
 def execute_tool_call(call: ToolCall) -> dict[str, Any]:
     func = TOOL_FUNCTIONS.get(call.name)
     if not func:
@@ -84,13 +131,21 @@ def run_model_tool_loop(
     tools: list[dict[str, Any]],
     model: str | None,
     max_tool_rounds: int,
+    initial_tool_choice: Any | None = None,
 ) -> dict[str, Any]:
     working_messages = list(messages)
     rounds: list[dict[str, Any]] = []
     all_tool_events: list[dict[str, Any]] = []
 
     for round_index in range(1, max_tool_rounds + 1):
-        response = provider.complete(working_messages, tools, model=model, temperature=0.0)
+        tool_choice = initial_tool_choice if round_index == 1 else None
+        response = provider.complete(
+            working_messages,
+            tools,
+            model=model,
+            temperature=0.0,
+            tool_choice=tool_choice,
+        )
         calls = response.tool_calls
         round_record: dict[str, Any] = {
             "round": round_index,
@@ -112,7 +167,10 @@ def run_model_tool_loop(
         non_clarification_events: list[dict[str, Any]] = []
 
         for call in calls:
-            print(f"🔧 {call.name}({json.dumps(call.args, ensure_ascii=False, sort_keys=True)})")
+            # Keep console diagnostics ASCII-safe on Windows terminals that still
+            # use a legacy code page. The original Unicode values remain intact
+            # in the transcript and in the actual tool call.
+            print(f"TOOL {call.name}({json.dumps(call.args, ensure_ascii=True, sort_keys=True)})")
             event = execute_tool_call(call)
             round_record["tool_results"].append(event)
             all_tool_events.append(event)
@@ -153,12 +211,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Interactive Research Agent chat with transcript logging.")
     parser.add_argument("--provider", choices=["openrouter", "openai", "anthropic", "gemini"], required=True)
     parser.add_argument("--model", default=None)
-    parser.add_argument("--version", required=True, help="Student-chosen artifact version label, e.g. v0, v1, v2.")
+    parser.add_argument("--version", required=True, help="Student-chosen artifact version label, e.g. v0, v1, v2, v3.")
     parser.add_argument("--system-prompt", type=Path, default=ARTIFACTS_DIR / "system_prompt.md")
     parser.add_argument("--tools", type=Path, default=ARTIFACTS_DIR / "tools.yaml")
     parser.add_argument("--transcripts-dir", type=Path, default=ROOT / "transcripts")
     parser.add_argument("--history-window", type=int, default=5, help="Keep the last N user/assistant pairs in context.")
-    parser.add_argument("--max-tool-rounds", type=int, default=4)
+    parser.add_argument("--max-tool-rounds", type=int, default=5)
     args = parser.parse_args()
 
     system_prompt = args.system_prompt.read_text(encoding="utf-8")
@@ -230,6 +288,7 @@ def main() -> None:
                 tools=openai_tools,
                 model=args.model,
                 max_tool_rounds=args.max_tool_rounds,
+                initial_tool_choice=initial_tool_choice_for(user_text),
             )
             turn_record.update(result)
             assistant_text = result["assistant_text"]

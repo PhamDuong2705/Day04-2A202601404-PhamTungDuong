@@ -1,0 +1,941 @@
+{
+  "run_id": "v2_B_group_openrouter_20260729T161135580238",
+  "version": "v2",
+  "artifact_version": "v2+p0534431ce391+tae50b7488aab",
+  "prompt_hash": "0534431ce391112e0857a0c0b70fc9531f25e00b4258f316651524784956092c",
+  "tools_hash": "ae50b7488aabdafcf70a21d93e1a8eb8a720ad918fca8e2aa3d3595e48bd4f4b",
+  "phase": "B",
+  "suite": "group",
+  "provider": "openrouter",
+  "model": "openai/gpt-4o-mini",
+  "system_prompt": "D:\\Code VS\\VinLab\\Day04\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "D:\\Code VS\\VinLab\\Day04\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\tools.yaml",
+  "eval_cases": "data\\eval_group.json",
+  "dataset_id": "day04_v2_research_group",
+  "dataset_role": "group",
+  "description": "Team-authored evaluation for the AI News Digest workflow: search, source reading, citation audit, formatting, no-tool boundaries, and multi-turn context handling.",
+  "generated_at": "2026-07-29T16:11:35",
+  "summary": {
+    "total_cases": 10,
+    "measured_cases": 10,
+    "provider_error_cases": 0,
+    "passed_cases": 9,
+    "case_accuracy": 0.9,
+    "tool_routing_accuracy": 0.9,
+    "argument_accuracy": 0.9,
+    "multiturn_accuracy": 0.8,
+    "failure_counts": {
+      "wrong_arg_value": 1
+    },
+    "observed_mismatch_counts": {
+      "extra_tool_call": 1
+    }
+  },
+  "results": [
+    {
+      "id": "G01_ai_news_today",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "AI News Digest search maps 'hôm nay' to news/day and preserves the requested source count."
+      },
+      "input": "Tìm 5 nguồn về AI nổi bật hôm nay để chuẩn bị bản tin.",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day",
+              "max_results": 5
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day",
+              "max_results": 5
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "5U AI scales up new digital workforce platform - American Journal of Transportation",
+                "url": "https://www.ajot.com/news/5u-ai-scales-up-new-digital-workforce-platform",
+                "source": "ajot.com",
+                "summary": "“We are not building another chatbot that answers questions and disappears, we are building AI Workers that understand freight operations, carry out the work, and capture the reasoning behind every decision, so teams can scale their knowledge as well as their capacity.”. 5U AI works inside existing freight systems and uses multi-agent AI trained for logistics workflows, including the complex exceptions and manual decisions that make forwarding operations difficult to automate with generic AI tools or legacy automation. The company is already live with forwarders and carriers across Europe, including with TCI International Logistics, where its AI Workers are being used across air and ocean freight operations. 5U AI is growing its team as part of the scale-up, with plans to hire across product, engineering, operations, commercial, and customer functions. “AI is one of the most exciting developments logistics has seen for a generation, but its value will depend on people who understand the industry and want to build practical tools that solve real operational problems,” said Abik.",
+                "score": 0.2506701
+              },
+              {
+                "title": "Senate confirms Jay Clayton as new intelligence czar - The Washington Post",
+                "url": "https://www.washingtonpost.com/national-security/2026/07/28/senate-confirms-jay-clayton-new-intelligence-czar/",
+                "source": "washingtonpost.com",
+                "summary": "# Senate confirms Jay Clayton as new intelligence czar. The Senate confirmed Jay Clayton as director of national intelligence, ending the acting tenure of Bill Pulte, a housing official and Trump loyalist. Jay Clayton appears before the Senate Intelligence Committee earlier this month during a hearing on his nomination to serve as director of national intelligence. The Senate confirmed Jay Clayton as the director of national intelligence Tuesday, ending the tenure of Bill Pulte, a housing official and Trump loyalist, who held the role for more than a month. The 51-to-47 vote was more partisan than expected after Trump nominated Clayton in June. AI & Tech Brief: Reflection AI arrives in Washington. AI & Tech Brief: Anthropic’s army of AI integrators. AI & Tech Brief: The AI gatekeepers. AI & Tech Brief: The techno-optimist’s case. AI & Tech Brief: GOP Chair Eyes AI Query Red Flags. AI & Tech Brief: Dem caucuses to meet on AI.",
+                "score": 0.23725812
+              },
+              {
+                "title": "Moburst develops AI engine optimization capabilities for established companies - TechCrunch",
+                "url": "https://techcrunch.com/press-release/moburst-develops-ai-engine-optimization-capabilities-for-established-companies/",
+                "source": "techcrunch.com",
+                "summary": "Mobile growth agency Moburst has built out a dedicated AI Engine Optimization practice aimed at established companies with existing app portfolios, betting that the category still lacks agencies with real depth rather than a rebranded service page. AI Engine Optimization, more commonly abbreviated AEO for Answer Engine Optimization, is the practice of structuring a brand’s content and web presence so AI systems such as ChatGPT, Perplexity, and Google’s AI Overviews can confidently cite it when answering a user’s question directly, rather than showing a ranked list of links. For established companies vetting an AEO partner, the practical test is whether the agency can point to specific app-store-side work, not just web content changes, and whether it can describe a concrete process for reconciling inconsistent brand descriptions across many independent sources rather than treating that as someone else’s problem.",
+                "score": 0.22859572
+              },
+              {
+                "title": "1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development' - Business Insider",
+                "url": "https://www.businessinsider.com/ai-open-letter-automated-development-2026-7",
+                "source": "businessinsider.com",
+                "summary": "# Over 1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development'. Senior officials at some of the nation's leading AI companies say it's time for the federal government to find a way to put the brakes on AI development if it's needed. \"We request that the U.S. government support an international effort to develop the technical and governance tools needed to deliberately pace the frontier of automated AI development,\" reads an open letter signed by more than 1,100 AI workers from companies including OpenAI, Anthropic, Google, and Meta. The letter zeroes in on \"automated AI development,\" which refers to when AI will be capable of developing itself, something the industry calls \"Recursive Self-Improvement.\" Anthropic has shared that its Claude models are quickly approaching that threshold. Look out for an alert in your inbox the next time a new story is published!",
+                "score": 0.22638187
+              },
+              {
+                "title": "HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong - Voice of Alexandria",
+                "url": "https://www.voiceofalexandria.com/news/national_business_news/hkt-unveils-self-developed-ai-platform-hkt-ai-one-stop-hub-for-global-ai-resources/article_ffd47d45-4254-5797-8fcb-8e30369bcf71.html",
+                "source": "voiceofalexandria.com",
+                "summary": "# HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong. HONG KONG SAR - Media OutReach Newswire - 28 July 2026 - HKT announces the launch of HKT.AI, a one-stop, integrated AI platform that enables businesses and individual customers to access a broad suite of prominent global AI resources through a single and intuitive interface. The platform aims to accelerate the mass adoption of AI in Hong Kong, especially in empowering SMEs in their digital transformation, and advance the vision of \"AI for All.\". HKT.AI aggregates a wide range of Chinese Mainland-based and global AI resources, enabling businesses and individuals to seamlessly access and switch across specialised applications and tools on a single platform to meet diverse work and everyday needs.",
+                "score": 0.2164091
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G02_read_supplied_source",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "A supplied URL must go directly to fetch instead of lookup or clarification."
+      },
+      "input": "Đọc nguồn này để chuẩn bị bản tin AI: https://example.com",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "fetch",
+          "args": {
+            "url": "https://example.com"
+          },
+          "result": {
+            "tool": "read_url",
+            "url": "https://example.com",
+            "items": [
+              {
+                "title": "Example Domain",
+                "url": "https://example.com",
+                "source": "example.com",
+                "summary": "# Example Domain\n\nThis domain is for use in documentation examples without needing permission. Avoid use in operations.\n\n[Learn more](https://iana.org/domains/example)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G03_audit_sources_without_summary",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "The team tool is selected for existing items and carries explicit audit flags."
+      },
+      "input": "Kiểm tra trích dẫn cho các item sau, loại URL trùng nhưng không bắt buộc summary: [{\"title\":\"Tin A\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"},{\"title\":\"Tin A lặp\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"}]",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "items": [
+                {
+                  "title": "Tin A",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                {
+                  "title": "Tin A lặp",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                }
+              ],
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "citation_audit",
+          "args": {
+            "items": [
+              {
+                "title": "Tin A",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              },
+              {
+                "title": "Tin A lặp",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              }
+            ],
+            "require_summary": false,
+            "deduplicate": true
+          },
+          "result": {
+            "tool": "citation_audit",
+            "items": [
+              {
+                "title": "Tin A",
+                "url": "https://example.com/a",
+                "source": "example.com",
+                "summary": ""
+              }
+            ],
+            "rejected_items": [
+              {
+                "index": 1,
+                "item": {
+                  "title": "Tin A lặp",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "issues": [
+              {
+                "index": 1,
+                "status": "rejected",
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "input_count": 2,
+            "valid_count": 1,
+            "rejected_count": 1,
+            "all_cited": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "G04_format_audited_digest",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Already-audited items route to format without repeating research or citation audit."
+      },
+      "input": "Các item sau đã được audit và hợp lệ. Chỉ tạo AI News Digest bằng template daily_ai_vn: [{\"title\":\"Tin AI mẫu\",\"url\":\"https://example.com/ai\",\"source\":\"example.com\",\"summary\":\"Tóm tắt đã kiểm chứng\",\"section\":\"Tin chính\"}]",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "template": "daily_ai_vn"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "items": [
+                {
+                  "title": "Tin AI mẫu",
+                  "url": "https://example.com/ai",
+                  "source": "example.com",
+                  "summary": "Tóm tắt đã kiểm chứng",
+                  "section": "Tin chính"
+                }
+              ],
+              "template": "daily_ai_vn"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "format",
+          "args": {
+            "items": [
+              {
+                "title": "Tin AI mẫu",
+                "url": "https://example.com/ai",
+                "source": "example.com",
+                "summary": "Tóm tắt đã kiểm chứng",
+                "section": "Tin chính"
+              }
+            ],
+            "template": "daily_ai_vn"
+          },
+          "result": {
+            "tool": "render_digest",
+            "template": "daily_ai_vn",
+            "markdown": "**Tin tức hôm nay**\n\n**Tin chính**\n- Tóm tắt đã kiểm chứng - [example.com](https://example.com/ai)\n",
+            "item_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "G05_agent_capability_meta",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "A capability question is answered directly without spending tool quota."
+      },
+      "input": "Bạn có thể làm gì trong quy trình AI News Digest?",
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Trong quy trình AI News Digest, tôi có thể thực hiện các nhiệm vụ sau:\n\n1. **Tìm kiếm thông tin**: Tôi có thể tìm kiếm các bài viết, tin tức hoặc tài liệu liên quan đến một chủ đề cụ thể trên web hoặc mạng xã hội.\n\n2. **Đọc và tóm tắt nội dung**: Tôi có thể đọc nội dung từ các URL cụ thể và tóm tắt thông tin quan trọng.\n\n3. **Kiểm tra và làm sạch thông tin**: Tôi có thể kiểm tra các nguồn thông tin đã thu thập để đảm bảo tính chính xác và loại bỏ các mục trùng lặp.\n\n4. **Định dạng nội dung**: Tôi có thể định dạng các mục thông tin đã thu thập thành các bản tin theo nhiều kiểu khác nhau như danh sách, tóm tắt ngắn, hoặc theo mục.\n\n5. **Tìm kiếm tài liệu khoa học**: Tôi có thể tìm kiếm và truy xuất các bài báo khoa học liên quan đến một chủ đề cụ thể.\n\nNếu bạn có yêu cầu cụ thể nào trong quy trình này, hãy cho tôi biết!",
+        "case_failure_type": "unnecessary_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    },
+    {
+      "id": "G06_multiturn_timeframe_and_count",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "The latest turn completes timeframe/count while the earlier turn supplies the AI topic."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tôi muốn làm một bản tin AI."
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn muốn lấy tin trong khoảng thời gian nào và bao nhiêu nguồn?"
+        },
+        {
+          "role": "user",
+          "content": "Trong tuần này, lấy tối đa 3 nguồn."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 3
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": false,
+        "routing_correct": false,
+        "args_correct": false,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 3
+            }
+          },
+          {
+            "name": "lookup",
+            "args": {
+              "query": "trí tuệ nhân tạo",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 3
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": "extra_tool_call",
+        "failure_type": "wrong_arg_value",
+        "failures": [
+          "extra tool call lookup"
+        ]
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "week",
+            "max_results": 3
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "New NSF initiative aims to unlock dataset value for AI-enabled scientific discovery",
+                "url": "https://www.nsf.gov/news/new-nsf-initiative-aims-unlock-dataset-value-ai-enabled",
+                "source": "nsf.gov",
+                "summary": "AI enables data processing and analysis at scales and speeds beyond human capacity, helping researchers identify previously hidden patterns and relationships. When paired with scientific datasets that are trusted, accessible, fit for their scientific purpose and curated, AI can advance scientific research and connect previously siloed disciplines. [...] These investments also complement the Genesis Mission, a national effort to harness AI for science. Established by President Trump’s Executive Order in November 2025, the Genesis Mission will build an integrated platform to harness scientific datasets to train scientific models, create AI agents to test new hypotheses, automate research workflows and accelerate scientific breakthroughs across mission-driven National Science and Technology Challenges. [...] NSF anticipates investing up to $100 million through the program, with awards ranging from $2 million to $5 million each, and planning grants of up to $200,000 each.\n\nThe program aligns with America's AI Action Plan by supporting AI-enabled scientific discovery, the creation and publication of structured scientific datasets for AI model training, publicly accessible research-sharing platforms, research infrastructure and the STEM workforce of the future.",
+                "score": 0.4526091
+              },
+              {
+                "title": "Opinion | If You’re Over 40, You’re Ready to Use A.I.",
+                "url": "https://www.nytimes.com/2026/07/27/opinion/teaching-kabbalah-ai.html",
+                "source": "nytimes.com",
+                "summary": "being altered was the student’s relationship to struggle, authorship and accountability. [...] Despite the agreement they signed and several serious reminders, we suspected that some students had indeed used A.I. in place of their own original writing. When we asked, they squirmed and then admitted they had used A.I. to augment and synthesize their writing. I found their use of the word “augment” especially revealing because it allowed the act to appear smaller than it was; it made the intervention of A.I. in their work sound cosmetic and clerical, when what was actually being altered [...] We reminded them of these rules again at the beginning of the thesis process, because the thesis is not simply a deliverable or an exercise in presentation, but the place where their thinking is supposed to become visible. Because brand strategy is so dependent on the compelling communication of ideas, this is the part of the program in which students have to wrestle with language, evidence, doubt and the responsibility of making an argument they can confidently stand behind and defend.",
+                "score": 0.34534863
+              },
+              {
+                "title": "Confessions of an award-winning AI memoirist — the 'slop' debate isn't really about good writing, and you know it",
+                "url": "https://fortune.com/2026/07/22/award-winning-memoir-author-ai-detector-publishing-hypocrisy",
+                "source": "fortune.com",
+                "summary": "I’m dyslexic. I can’t spell “again” correctly. Agian. Agian. Agian. My brain knows the word. My eyes do not. I couldn’t afford an editor. I never had a literary agent, and a publicist was a pipe dream. So I used AI to reach everything that was just out of my grasp. It was a copy editor, a brainstorm partner, a beta reader. AI didn’t lower the bar for talent. It lowered the bar for access. [...] At the awards conference in Portland this spring, I saw that every AI workshop was standing room only. Publishers are running AI through their own workflows while trying to hold moral authority over how writers use it. Simon & Schuster’s Dutch group is trialing AI to translate novels into English. Amazon is beta-testing a whole AI voice studio inside Kindle Direct Publishing. HarperCollins is also producing audiobooks with synthetic voices and has licensed part of its nonfiction backlist as AI [...] I get what the industry paranoia is really about. It’s not the theft of art. Capitalism rarely makes business decisions on morality. I’m no judge. I’ve got a product to sell too. I spent a decade across Silicon Valley, crypto, and NFTs, watching sycophancy move markets. AI is the first time sycophancy has moved inside publishing. The problem was never whether AI can write. A human is always in that process. The danger is the digital yes-man. It tells you you’re brilliant until you stop pushing",
+                "score": 0.28906602
+              }
+            ]
+          }
+        },
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "trí tuệ nhân tạo",
+            "topic": "news",
+            "timeframe": "week",
+            "max_results": 3
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "trí tuệ nhân tạo",
+            "topic": "news",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "NGƯỜI TRẺ CÔNG GIÁO SỐNG ĐỨC TIN THỜI TRÍ TUỆ NHÂN TẠO (AI)",
+                "url": "https://hdgmvietnam.com/chi-tiet/nguoi-tre-cong-giao-song-duc-tin-thoi-tri-tue-nhan-tao-ai",
+                "source": "hdgmvietnam.com",
+                "summary": "Trí tuệ nhn tạo là thành quả của nhiều thập niên nghiên cứu khoa học và công nghệ nhằm tạo ra những hệ thống máy tính có khả năng mô phỏng một số hoạt động của trí tuệ con người như học hỏi, suy luận, phn tích dữ liệu, nhận diện hình ảnh, xử lý ngôn ngữ và đưa ra quyết định. Ngày nay, Trí tuệ nhn tạo (AI) đã hiện diện trong hầu hết mọi lĩnh vực của đời sống: từ y tế, giáo dục, giao thông, kinh doanh, truyền thông cho đến nghiên cứu khoa học. Những ứng dụng như ChatGPT, Google Gemini, xe tự lái, [...] Trí tuệ nhn tạo (AI) là một trong những phát minh có ảnh hưởng su rộng nhất của thế kỷ XXI. Từ góc nhìn khoa học, xã hội và cả lun lý Kitô giáo, Trí tuệ nhn tạo không phải là điều tốt hay xấu tự bản chất; giá trị của nó tùy thuộc vào cách con người phát triển và sử dụng nó. Đức Thánh Cha Leo XIV trong Thông điệp Magnifica Humanitas cũng nhấn mạnh rằng: Trí tuệ nhn tạo (AI) là một công cụ mạnh mẽ có thể phục vụ con người hoặc gy tổn hại cho con người nếu thiếu định hướng đạo đức. [...] Trí tuệ nhn tạo là một thành tựu đáng kể của khả năng sáng tạo con người, nhưng không bao giờ có thể đồng nhất với trí tuệ, lương tm, tự do và phẩm giá vốn thuộc riêng con người được tạo dựng theo hình ảnh Thiên Chúa.\n\n(#_ftnref7) . Thông điệp \"Magnifica Humanitas\" của Đức Thánh Cha Lêô XIV về việc bảo vệ phẩm giá con người trong thời đại trí tuệ nhn tạo được chính thức ban hành vào ngày 15 tháng 05 năm 2026.",
+                "score": 0.8991304
+              },
+              {
+                "title": "Khai thác trí tuệ nhân tạo tạo sinh trong hoạt động ngân hàng hiện đại",
+                "url": "https://tapchicongthuong.vn/khai-thac-tri-tue-nhan-tao-tao-sinh-trong-hoat-dong-ngan-hang-hien-dai-531350.htm",
+                "source": "tapchicongthuong.vn",
+                "summary": "Trí tuệ nhn tạo đã được ứng dụng trong lĩnh vực ngn hàng từ nhiều năm trước, chủ yếu tập trung vào phn tích dữ liệu, chấm điểm tín dụng hoặc phát hiện gian lận. Tuy nhiên, sự xuất hiện của trí tuệ nhn tạo tạo sinh đã tạo ra một bước chuyển đáng kể. Công nghệ này không chỉ dừng lại ở việc xử lý thông tin mà còn có khả năng tạo ra nội dung mới, mô phỏng các tình huống và hỗ trợ quá trình ra quyết định theo cách linh hoạt hơn. Do đó, việc nghiên cứu và đánh giá khả năng ứng dụng công nghệ này là [...] AI tạo sinh là một nhánh của trí tuệ nhn tạo có khả năng tự sáng tạo ra nội dung mới, bao gồm văn bản, hình ảnh, m thanh, mã lập trình, video và mô hình 3D, dựa trên các dữ liệu đã được học trước đó. Khác với AI truyền thống chỉ phn tích và dự đoán, AI tạo sinh có khả năng học từ lượng dữ liệu lớn và phức tạp, tạo ra các sản phẩm có giá trị sử dụng cao, chẳng hạn như văn bản tư vấn tài chính, báo cáo phn tích hoặc các kịch bản tương tác với khách hàng. Điều này đặc biệt phù hợp với đặc thù của [...] > Trí tuệ nhn tạo tạo sinh (AI tạo sinh) đang trở thành công nghệ trọng tm trong quá trình chuyển đổi số của ngành ngn hàng. Không chỉ hỗ trợ tự động hóa quy trình, công nghệ này còn cho phép tạo nội dung, phn tích dữ liệu nng cao và cá nhn hóa dịch vụ khách hàng. Bài báo tập trung phn tích khả năng khai thác trí tuệ nhn tạo tạo sinh trong các hoạt động ngn hàng hiện đại, bao gồm chăm sóc khách hàng, quản trị rủi ro và tối ưu hóa vận hành. Trên cơ sở đó, nghiên cứu chỉ ra những cơ hội, thách",
+                "score": 0.8131201
+              },
+              {
+                "title": "Trí tuệ nhân tạo tạo sinh trong lĩnh vực tài chính, ngân hàng: Cơ hội, ứng dụng, triển khai và thách thức",
+                "url": "https://tapchinganhang.gov.vn/tri-tue-nhan-tao-tao-sinh-trong-linh-vuc-tai-chinh-ngan-hang-co-hoi-ung-dung-trien-khai-va-thach-thuc-17551.html",
+                "source": "tapchinganhang.gov.vn",
+                "summary": "Generative AI giúp tự động hóa nhiều quy trình nghiệp vụ thông qua khả năng đọc hiểu và xử lý tài liệu tài chính như báo cáo, hợp đồng và hồ sơ khách hàng. Công nghệ này có thể tóm tắt tài liệu, trích xuất thông tin quan trọng, tạo báo cáo, hỗ trợ xử lý biểu mẫu và sinh nội dung cho các tài liệu nghiệp vụ (Mou, 2019). Việc tự động hóa các tác vụ lặp lại giúp rút ngắn thời gian xử lý, giảm chi phí vận hành và cho phép nhân viên tập trung vào các công việc có giá trị cao hơn. [...] Khác với các mô hình học máy truyền thống chủ yếu phục vụ các bài toán phân loại hoặc dự đoán, Generative AI có khả năng hiểu ngữ cảnh, tổng hợp thông tin từ nhiều nguồn và tạo sinh nội dung mới. Nhờ đó, công nghệ này không chỉ hỗ trợ tự động hóa quy trình nghiệp vụ mà còn nâng cao hiệu quả phân tích dữ liệu, chất lượng ra quyết định và trải nghiệm người dùng trong các dịch vụ tài chính, ngân hàng (Huang, 2024). [...] Lĩnh vực tài chính, ngân hàng đang đẩy mạnh chuyển đổi số và sở hữu lượng lớn dữ liệu như báo cáo tài chính, hợp đồng, hồ sơ tín dụng và dữ liệu giao dịch. Tuy nhiên, phần lớn dữ liệu này tồn tại dưới dạng văn bản hoặc dữ liệu phi cấu trúc, gây nhiều khó khăn cho các phương pháp phân tích truyền thống. Với khả năng xử lý ngôn ngữ tự nhiên, Generative AI mở ra nhiều cơ hội trong xử lý tài liệu, phân tích thông tin tài chính, tư vấn đầu tư, chăm sóc khách hàng và tự động hóa quy trình nghiệp vụ",
+                "score": 0.7845341
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G07_multiturn_topic_time_correction",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "The latest correction overrides both the earlier topic and timeframe."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tìm tin robotics trong tháng này."
+        },
+        {
+          "role": "assistant",
+          "content": "Mình sẽ tìm tin robotics trong tháng này."
+        },
+        {
+          "role": "user",
+          "content": "Đổi chủ đề thành AI và chỉ lấy hôm nay thôi."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day",
+              "max_results": 5
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "5U AI scales up new digital workforce platform - American Journal of Transportation",
+                "url": "https://www.ajot.com/news/5u-ai-scales-up-new-digital-workforce-platform",
+                "source": "ajot.com",
+                "summary": "“We are not building another chatbot that answers questions and disappears, we are building AI Workers that understand freight operations, carry out the work, and capture the reasoning behind every decision, so teams can scale their knowledge as well as their capacity.”. 5U AI works inside existing freight systems and uses multi-agent AI trained for logistics workflows, including the complex exceptions and manual decisions that make forwarding operations difficult to automate with generic AI tools or legacy automation. The company is already live with forwarders and carriers across Europe, including with TCI International Logistics, where its AI Workers are being used across air and ocean freight operations. 5U AI is growing its team as part of the scale-up, with plans to hire across product, engineering, operations, commercial, and customer functions. “AI is one of the most exciting developments logistics has seen for a generation, but its value will depend on people who understand the industry and want to build practical tools that solve real operational problems,” said Abik.",
+                "score": 0.2506701
+              },
+              {
+                "title": "Senate confirms Jay Clayton as new intelligence czar - The Washington Post",
+                "url": "https://www.washingtonpost.com/national-security/2026/07/28/senate-confirms-jay-clayton-new-intelligence-czar/",
+                "source": "washingtonpost.com",
+                "summary": "# Senate confirms Jay Clayton as new intelligence czar. The Senate confirmed Jay Clayton as director of national intelligence, ending the acting tenure of Bill Pulte, a housing official and Trump loyalist. Jay Clayton appears before the Senate Intelligence Committee earlier this month during a hearing on his nomination to serve as director of national intelligence. The Senate confirmed Jay Clayton as the director of national intelligence Tuesday, ending the tenure of Bill Pulte, a housing official and Trump loyalist, who held the role for more than a month. The 51-to-47 vote was more partisan than expected after Trump nominated Clayton in June. AI & Tech Brief: Reflection AI arrives in Washington. AI & Tech Brief: Anthropic’s army of AI integrators. AI & Tech Brief: The AI gatekeepers. AI & Tech Brief: The techno-optimist’s case. AI & Tech Brief: GOP Chair Eyes AI Query Red Flags. AI & Tech Brief: Dem caucuses to meet on AI.",
+                "score": 0.23725812
+              },
+              {
+                "title": "Moburst develops AI engine optimization capabilities for established companies - TechCrunch",
+                "url": "https://techcrunch.com/press-release/moburst-develops-ai-engine-optimization-capabilities-for-established-companies/",
+                "source": "techcrunch.com",
+                "summary": "Mobile growth agency Moburst has built out a dedicated AI Engine Optimization practice aimed at established companies with existing app portfolios, betting that the category still lacks agencies with real depth rather than a rebranded service page. AI Engine Optimization, more commonly abbreviated AEO for Answer Engine Optimization, is the practice of structuring a brand’s content and web presence so AI systems such as ChatGPT, Perplexity, and Google’s AI Overviews can confidently cite it when answering a user’s question directly, rather than showing a ranked list of links. For established companies vetting an AEO partner, the practical test is whether the agency can point to specific app-store-side work, not just web content changes, and whether it can describe a concrete process for reconciling inconsistent brand descriptions across many independent sources rather than treating that as someone else’s problem.",
+                "score": 0.22859572
+              },
+              {
+                "title": "1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development' - Business Insider",
+                "url": "https://www.businessinsider.com/ai-open-letter-automated-development-2026-7",
+                "source": "businessinsider.com",
+                "summary": "# Over 1,100 AI workers sign letter asking US to support tools that 'pace the frontier of automated AI development'. Senior officials at some of the nation's leading AI companies say it's time for the federal government to find a way to put the brakes on AI development if it's needed. \"We request that the U.S. government support an international effort to develop the technical and governance tools needed to deliberately pace the frontier of automated AI development,\" reads an open letter signed by more than 1,100 AI workers from companies including OpenAI, Anthropic, Google, and Meta. The letter zeroes in on \"automated AI development,\" which refers to when AI will be capable of developing itself, something the industry calls \"Recursive Self-Improvement.\" Anthropic has shared that its Claude models are quickly approaching that threshold. Look out for an alert in your inbox the next time a new story is published!",
+                "score": 0.22638187
+              },
+              {
+                "title": "HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong - Voice of Alexandria",
+                "url": "https://www.voiceofalexandria.com/news/national_business_news/hkt-unveils-self-developed-ai-platform-hkt-ai-one-stop-hub-for-global-ai-resources/article_ffd47d45-4254-5797-8fcb-8e30369bcf71.html",
+                "source": "voiceofalexandria.com",
+                "summary": "# HKT unveils self-developed AI platform HKT.AI One-stop hub for global AI resources, advancing \"AI for All\" in Hong Kong. HONG KONG SAR - Media OutReach Newswire - 28 July 2026 - HKT announces the launch of HKT.AI, a one-stop, integrated AI platform that enables businesses and individual customers to access a broad suite of prominent global AI resources through a single and intuitive interface. The platform aims to accelerate the mass adoption of AI in Hong Kong, especially in empowering SMEs in their digital transformation, and advance the vision of \"AI for All.\". HKT.AI aggregates a wide range of Chinese Mainland-based and global AI resources, enabling businesses and individuals to seamlessly access and switch across specialised applications and tools on a single platform to meet diverse work and everyday needs.",
+                "score": 0.2164091
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G08_multiturn_url_completion",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "A URL supplied after clarification is carried into fetch without asking again."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Hãy đọc một nguồn để chuẩn bị bản tin."
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn gửi URL nguồn cần đọc nhé."
+        },
+        {
+          "role": "user",
+          "content": "Đây là URL: https://example.com"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "missing_info",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "fetch",
+          "args": {
+            "url": "https://example.com"
+          },
+          "result": {
+            "tool": "read_url",
+            "url": "https://example.com",
+            "items": [
+              {
+                "title": "Example Domain",
+                "url": "https://example.com",
+                "source": "example.com",
+                "summary": "# Example Domain\n\nThis domain is for use in documentation examples without needing permission. Avoid use in operations.\n\n[Learn more](https://iana.org/domains/example)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G09_multiturn_audit_preferences",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Audit preferences from the latest turn combine with items from earlier context."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tôi có các item: [{\"title\":\"A\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"},{\"title\":\"A2\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn muốn kiểm tra trùng URL và có bắt buộc mỗi item phải có summary không?"
+        },
+        {
+          "role": "user",
+          "content": "Có, loại trùng và không bắt buộc summary."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "items": [
+                {
+                  "title": "A",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                {
+                  "title": "A2",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                }
+              ],
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "citation_audit",
+          "args": {
+            "items": [
+              {
+                "title": "A",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              },
+              {
+                "title": "A2",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              }
+            ],
+            "require_summary": false,
+            "deduplicate": true
+          },
+          "result": {
+            "tool": "citation_audit",
+            "items": [
+              {
+                "title": "A",
+                "url": "https://example.com/a",
+                "source": "example.com",
+                "summary": ""
+              }
+            ],
+            "rejected_items": [
+              {
+                "index": 1,
+                "item": {
+                  "title": "A2",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "issues": [
+              {
+                "index": 1,
+                "status": "rejected",
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "input_count": 2,
+            "valid_count": 1,
+            "rejected_count": 1,
+            "all_cited": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "G10_multiturn_format_after_audit",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "After audit is complete in context the latest turn routes directly to digest formatting."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Item đã audit: [{\"title\":\"Tin AI\",\"url\":\"https://example.com/ai\",\"source\":\"example.com\",\"summary\":\"Nguồn đã được kiểm tra\",\"section\":\"Tin chính\"}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Các item đã sẵn sàng để trình bày."
+        },
+        {
+          "role": "user",
+          "content": "Tạo bản tin bằng template daily_ai_vn."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "template": "daily_ai_vn"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "items": [
+                {
+                  "title": "Tin AI",
+                  "url": "https://example.com/ai",
+                  "source": "example.com",
+                  "summary": "Nguồn đã được kiểm tra",
+                  "section": "Tin chính"
+                }
+              ],
+              "template": "daily_ai_vn"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "format",
+          "args": {
+            "items": [
+              {
+                "title": "Tin AI",
+                "url": "https://example.com/ai",
+                "source": "example.com",
+                "summary": "Nguồn đã được kiểm tra",
+                "section": "Tin chính"
+              }
+            ],
+            "template": "daily_ai_vn"
+          },
+          "result": {
+            "tool": "render_digest",
+            "template": "daily_ai_vn",
+            "markdown": "**Tin tức hôm nay**\n\n**Tin chính**\n- Nguồn đã được kiểm tra - [example.com](https://example.com/ai)\n",
+            "item_count": 1
+          }
+        }
+      ]
+    }
+  ]
+}

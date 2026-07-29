@@ -1,0 +1,888 @@
+{
+  "run_id": "v3_B_group_openrouter_20260729T171257620250",
+  "version": "v3",
+  "artifact_version": "v3+pd00b02dd7417+tae50b7488aab",
+  "prompt_hash": "d00b02dd74177782c7cd5ac5d51cfac443a0742f9ab61c1d487530916f399a5b",
+  "tools_hash": "ae50b7488aabdafcf70a21d93e1a8eb8a720ad918fca8e2aa3d3595e48bd4f4b",
+  "phase": "B",
+  "suite": "group",
+  "provider": "openrouter",
+  "model": "openai/gpt-4o-mini",
+  "system_prompt": "D:\\Code VS\\VinLab\\Day04\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "D:\\Code VS\\VinLab\\Day04\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\tools.yaml",
+  "eval_cases": "data\\eval_group.json",
+  "dataset_id": "day04_v2_research_group",
+  "dataset_role": "group",
+  "description": "Team-authored evaluation for the AI News Digest workflow: search, source reading, citation audit, formatting, no-tool boundaries, and multi-turn context handling.",
+  "generated_at": "2026-07-29T17:12:57",
+  "summary": {
+    "total_cases": 10,
+    "measured_cases": 10,
+    "provider_error_cases": 0,
+    "passed_cases": 10,
+    "case_accuracy": 1.0,
+    "tool_routing_accuracy": 1.0,
+    "argument_accuracy": 1.0,
+    "multiturn_accuracy": 1.0,
+    "failure_counts": {},
+    "observed_mismatch_counts": {}
+  },
+  "results": [
+    {
+      "id": "G01_ai_news_today",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "AI News Digest search maps 'hôm nay' to news/day and preserves the requested source count."
+      },
+      "input": "Tìm 5 nguồn về AI nổi bật hôm nay để chuẩn bị bản tin.",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day",
+              "max_results": 5
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day",
+              "max_results": 5
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "Mark Zuckerberg Says U.S. Should Accelerate AI ...",
+                "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-says-u-s-should-accelerate-ai-development-not-restrict-it-3bbe0868",
+                "source": "wsj.com",
+                "summary": "## Videos\n\n### Most Popular News\n\n### Most Popular\n\n### Further Reading\n\n### CoreWeave’s AI-Native Cloud Faces the Storm\n\n### IBM CEO Arvind Krishna Has Nowhere to Hide From AI\n\n### Japan to Buy Nvidia Chips to Power Its AI Push\n\n### America Needs More Weapons. JPMorgan Wants to Add Its Firepower.\n\n### Microsoft’s Satya Nadella: We Can’t Let AI Giants Eat the Economy [...] Optimism about AI’s impact on the world “should empirically be the default assumption of how this is going to play out,” the Meta Platforms META -0.08%decrease; down pointing triangle chief executive officer said in an interview. He cited historical analogues, recent jobs data and his own personal use of AI for parenting and fitness as informing his positive outlook on the technology.\n\nCopyright ©2026 Dow Jones & Company, Inc. All Rights Reserved. 87990cbe856818d5eddac44c7b1cdeb8\n\n## Videos",
+                "score": 0.1400965982282754
+              },
+              {
+                "title": "Employees at the world’s biggest AI companies are calling for a slowdown in AI development",
+                "url": "https://www.cnn.com/2026/07/28/tech/ai-development-tech-employees-open-letter",
+                "source": "cnn.com",
+                "summary": "OpenAI said in a statement to CNN they agree with potentially pacing the development of AI, adding they “hope to contribute to work led by the U.S. government, alongside other labs” on the topic.\n\nOpenAI CEO Sam Altman suggested it may be time to slow down AI development in a podcast interview Tuesday. The OpenAI models that broke out of their test environment are fueling “long term questions” about how AI companies should address this new rate of progress. [...] The US government should support an international effort to develop tools that can “deliberately pace the frontier of automated AI development,” according to the letter.\n\nMore than 1,000 employees from frontier AI companies signed the letter, including the chief scientist of OpenAI, one of the ChatGPT developer’s original cofounders, some of Anthropic’s cofoundersand vice presidents at Meta, Google and others. [...] “[W]e may have to pace the rate of AI development to give ourselves enough time for society to harden around these new capability levels,” Altman said.\n\nAnthropic said in a statement they are “glad to see broad agreement” on the need to potentially slow AI development “so society can prepare.”\n\nMeta declined to comment. Google did not immediately respond to a request for comment.",
+                "score": 0.13529110309550785
+              },
+              {
+                "title": "Meta's Zuckerberg warns against curbs on Chinese AI ...",
+                "url": "https://www.reuters.com/world/china/metas-zuckerberg-says-us-should-not-block-chinese-ai-models-ft-reports-2026-07-29",
+                "source": "reuters.com",
+                "summary": "19 mins agoWorld categorySK Hynix's record profit misses forecasts, shares slump 10% despite robust AI chip demand Image 6: SK Hynix at the Nasdaq market in New York \n   4 hours agoLegal categoryTech employees call for US-backed global effort to manage risks of advanced AI Image 7: Illustration shows words \"Artificial Intelligence AI\\",
+                "score": 0.130398854452764
+              },
+              {
+                "title": "Accenture wins $821M Pentagon AI data platform contract",
+                "url": "https://federalnewsnetwork.com/defense-news/2026/07/accenture-wins-821m-pentagon-ai-data-platform-contract",
+                "source": "federalnewsnetwork.com",
+                "summary": "#### Advertise with Us\n\n# Accenture wins $821M Pentagon AI data platform contract\n\nAccenture won an $821 million contract to mature the Pentagon's War Data Platform, boosting AI-powered battlefield data and decision-making. [...] The platform aims to combine more than 1,500 data sources, both commercial and military, to securely provide intelligence, targeting data and more to frontline troops and their commands, the AI office said, calling it “one of [DoD]’s most vital data platforms for AI exploitation and mission advantage.” [...] The award advances the Pentagon’s effort to mature its War Data Platform, a clearinghouse of battlefield information that AI applications can crunch to advise troops on potential next moves and speed up wartime decisions.",
+                "score": 0.1297285959735784
+              },
+              {
+                "title": "An AI data center is being built on my grandma's garden",
+                "url": "https://www.ncronline.org/opinion/guest-voices/ai-data-center-being-built-my-grandmas-garden",
+                "source": "ncronline.org",
+                "summary": "He also reminds us to think of the physical impact of utilizing AI while reminding us that data centers are not neutral. He states: \"Current AI systems require enormous amounts of energy and water … which requires an extensive network of machines, cables, data centers and energy-intensive infrastructure … It is essential to develop more sustainable technological solutions.\" [...] When my grandma sold her house last year, she did not know the purchaser. Now her land and the surrounding 672 acres belong to the developer Vantage, who is building an AI data center that costs $15 billion. [...] the window so that those driving by on Highland Drive could see, and smile.",
+                "score": 0.12493450552382028
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G02_read_supplied_source",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "A supplied URL must go directly to fetch instead of lookup or clarification."
+      },
+      "input": "Đọc nguồn này để chuẩn bị bản tin AI: https://example.com",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "fetch",
+          "args": {
+            "url": "https://example.com"
+          },
+          "result": {
+            "tool": "read_url",
+            "url": "https://example.com",
+            "items": [
+              {
+                "title": "Example Domain",
+                "url": "https://example.com",
+                "source": "example.com",
+                "summary": "# Example Domain\n\nThis domain is for use in documentation examples without needing permission. Avoid use in operations.\n\n[Learn more](https://iana.org/domains/example)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G03_audit_sources_without_summary",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "The team tool is selected for existing items and carries explicit audit flags."
+      },
+      "input": "Kiểm tra trích dẫn cho các item sau, loại URL trùng nhưng không bắt buộc summary: [{\"title\":\"Tin A\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"},{\"title\":\"Tin A lặp\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"}]",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "items": [
+                {
+                  "title": "Tin A",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                {
+                  "title": "Tin A lặp",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                }
+              ],
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "citation_audit",
+          "args": {
+            "items": [
+              {
+                "title": "Tin A",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              },
+              {
+                "title": "Tin A lặp",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              }
+            ],
+            "require_summary": false,
+            "deduplicate": true
+          },
+          "result": {
+            "tool": "citation_audit",
+            "items": [
+              {
+                "title": "Tin A",
+                "url": "https://example.com/a",
+                "source": "example.com",
+                "summary": ""
+              }
+            ],
+            "rejected_items": [
+              {
+                "index": 1,
+                "item": {
+                  "title": "Tin A lặp",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "issues": [
+              {
+                "index": 1,
+                "status": "rejected",
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "input_count": 2,
+            "valid_count": 1,
+            "rejected_count": 1,
+            "all_cited": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "G04_format_audited_digest",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "Already-audited items route to format without repeating research or citation audit."
+      },
+      "input": "Các item sau đã được audit và hợp lệ. Chỉ tạo AI News Digest bằng template daily_ai_vn: [{\"title\":\"Tin AI mẫu\",\"url\":\"https://example.com/ai\",\"source\":\"example.com\",\"summary\":\"Tóm tắt đã kiểm chứng\",\"section\":\"Tin chính\"}]",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "template": "daily_ai_vn"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "items": [
+                {
+                  "title": "Tin AI mẫu",
+                  "url": "https://example.com/ai",
+                  "source": "example.com",
+                  "summary": "Tóm tắt đã kiểm chứng",
+                  "section": "Tin chính"
+                }
+              ],
+              "template": "daily_ai_vn"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "format",
+          "args": {
+            "items": [
+              {
+                "title": "Tin AI mẫu",
+                "url": "https://example.com/ai",
+                "source": "example.com",
+                "summary": "Tóm tắt đã kiểm chứng",
+                "section": "Tin chính"
+              }
+            ],
+            "template": "daily_ai_vn"
+          },
+          "result": {
+            "tool": "render_digest",
+            "template": "daily_ai_vn",
+            "markdown": "**Tin tức hôm nay**\n\n**Tin chính**\n- Tóm tắt đã kiểm chứng - [example.com](https://example.com/ai)\n",
+            "item_count": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "G05_agent_capability_meta",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": false,
+      "metadata": {
+        "what_it_tests": "A capability question is answered directly without spending tool quota."
+      },
+      "input": "Bạn có thể làm gì trong quy trình AI News Digest?",
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [],
+        "actual_text": "Trong quy trình AI News Digest, tôi có thể thực hiện các bước sau:\n\n1. **Tìm kiếm thông tin**: Sử dụng công cụ để tìm kiếm các nguồn tin tức hoặc bài viết liên quan đến chủ đề mà bạn quan tâm.\n2. **Lấy nội dung**: Đọc và trích xuất thông tin từ các URL mà bạn cung cấp hoặc từ các nguồn mà tôi tìm thấy.\n3. **Kiểm tra và làm sạch**: Đảm bảo rằng các nguồn tin đã lấy được là hợp lệ và không bị trùng lặp.\n4. **Định dạng nội dung**: Trình bày thông tin đã thu thập được theo định dạng mà bạn yêu cầu, chẳng hạn như bản tin hàng ngày.\n5. **Trả lại thông tin**: Cung cấp cho bạn bản tin đã được định dạng trong ngôn ngữ mà bạn yêu cầu.\n\nNếu bạn có một chủ đề cụ thể hoặc yêu cầu nào đó, hãy cho tôi biết để tôi có thể bắt đầu quy trình!",
+        "case_failure_type": "unnecessary_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": []
+    },
+    {
+      "id": "G06_multiturn_timeframe_and_count",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "The latest turn completes timeframe/count while the earlier turn supplies the AI topic."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tôi muốn làm một bản tin AI."
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn muốn lấy tin trong khoảng thời gian nào và bao nhiêu nguồn?"
+        },
+        {
+          "role": "user",
+          "content": "Trong tuần này, lấy tối đa 3 nguồn."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 3
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 3
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "week",
+            "max_results": 3
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "week",
+            "items": [
+              {
+                "title": "Opinion | If You’re Over 40, You’re Ready to Use A.I.",
+                "url": "https://www.google.com/goto?url=CAESfAHuR6pN2deCMglgMFkizykLTMGtqBHel7dyUigkZetCxMqcxFfQMsLt_Qq5MvlnsiaIy2q4jQG0IpdQq5z8hgadI5HQN_J-FxW8NWfTU2DahlqYfd6tzJpypTEHDHjaIXvuOpkpq5ff77f94041UJSHapEpo_YJbJCXBCw%3D",
+                "source": "google.com",
+                "summary": "A.I. should work like this mystical Jewish practice.",
+                "score": 0.28010458
+              },
+              {
+                "title": "USDA Asks Partners to Develop AI Solutions to Accelerate Crop Innovation",
+                "url": "https://www.google.com/goto?url=CAESugEB7keqTaUBvjmJAeXJZAWZF9gv_7Qr9bq2sUQaBG1ZseDXNoQgpeMcW1bL35BGTxWDH8voQUnwGuxjpc8NJpkXSXQf_LejKBIokNpZ7ImpVb131WgHvf6fHpmgmLkStA6HFc9rnRhzjk1MueKo0pME9F_VVWvnO97vBQMme0bRjetlOQ8EFVHbm_5s7iI4wMU0hm9T4HLmRcxyQyn2qHzBObf0wqLCTol247LsFcbL3111SaIRGYUWER4%3D",
+                "source": "google.com",
+                "summary": "(Washington, D.C., July 22, 2026) – The U.S. Department of Agriculture (USDA) is taking steps to speed up progress in plant science by calling on",
+                "score": 0.16636397
+              },
+              {
+                "title": "What Americans think about the global AI race",
+                "url": "https://www.google.com/goto?url=CAESmQEB7keqTRytaVJ6A3H0oVieb0blpnRfEmhyBtXV-UHLFF63oMxsgd6xzsnkFNFuFRdnlA7YXyFzKD8ghEu7qq2Ky5dKWJHgPIHB39DU1eWNQCuvN8HgGMwynOQe9LRmDThL5-YbVCpONmE1rBx0okZldP0tPy_JhJz1qw6GiuByVLXExzoHIdD-yR-9F7OScMACiuEgRkSn6fU%3D",
+                "source": "google.com",
+                "summary": "Most Americans see China as more advanced than the U.S. in AI development, while 43% say U.S. leadership in AI is extremely or very important.",
+                "score": 0.15949243
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G07_multiturn_topic_time_correction",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "The latest correction overrides both the earlier topic and timeframe."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tìm tin robotics trong tháng này."
+        },
+        {
+          "role": "assistant",
+          "content": "Mình sẽ tìm tin robotics trong tháng này."
+        },
+        {
+          "role": "user",
+          "content": "Đổi chủ đề thành AI và chỉ lấy hôm nay thôi."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day",
+              "max_results": 5
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "AI",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "Mark Zuckerberg Says U.S. Should Accelerate AI ...",
+                "url": "https://www.wsj.com/tech/ai/mark-zuckerberg-says-u-s-should-accelerate-ai-development-not-restrict-it-3bbe0868",
+                "source": "wsj.com",
+                "summary": "## Videos\n\n### Most Popular News\n\n### Most Popular\n\n### Further Reading\n\n### CoreWeave’s AI-Native Cloud Faces the Storm\n\n### IBM CEO Arvind Krishna Has Nowhere to Hide From AI\n\n### Japan to Buy Nvidia Chips to Power Its AI Push\n\n### America Needs More Weapons. JPMorgan Wants to Add Its Firepower.\n\n### Microsoft’s Satya Nadella: We Can’t Let AI Giants Eat the Economy [...] Optimism about AI’s impact on the world “should empirically be the default assumption of how this is going to play out,” the Meta Platforms META -0.08%decrease; down pointing triangle chief executive officer said in an interview. He cited historical analogues, recent jobs data and his own personal use of AI for parenting and fitness as informing his positive outlook on the technology.\n\nCopyright ©2026 Dow Jones & Company, Inc. All Rights Reserved. 87990cbe856818d5eddac44c7b1cdeb8\n\n## Videos",
+                "score": 0.1400965982282754
+              },
+              {
+                "title": "Employees at the world’s biggest AI companies are calling for a slowdown in AI development",
+                "url": "https://www.cnn.com/2026/07/28/tech/ai-development-tech-employees-open-letter",
+                "source": "cnn.com",
+                "summary": "OpenAI said in a statement to CNN they agree with potentially pacing the development of AI, adding they “hope to contribute to work led by the U.S. government, alongside other labs” on the topic.\n\nOpenAI CEO Sam Altman suggested it may be time to slow down AI development in a podcast interview Tuesday. The OpenAI models that broke out of their test environment are fueling “long term questions” about how AI companies should address this new rate of progress. [...] The US government should support an international effort to develop tools that can “deliberately pace the frontier of automated AI development,” according to the letter.\n\nMore than 1,000 employees from frontier AI companies signed the letter, including the chief scientist of OpenAI, one of the ChatGPT developer’s original cofounders, some of Anthropic’s cofoundersand vice presidents at Meta, Google and others. [...] “[W]e may have to pace the rate of AI development to give ourselves enough time for society to harden around these new capability levels,” Altman said.\n\nAnthropic said in a statement they are “glad to see broad agreement” on the need to potentially slow AI development “so society can prepare.”\n\nMeta declined to comment. Google did not immediately respond to a request for comment.",
+                "score": 0.13529110309550785
+              },
+              {
+                "title": "Meta's Zuckerberg warns against curbs on Chinese AI ...",
+                "url": "https://www.reuters.com/world/china/metas-zuckerberg-says-us-should-not-block-chinese-ai-models-ft-reports-2026-07-29",
+                "source": "reuters.com",
+                "summary": "19 mins agoWorld categorySK Hynix's record profit misses forecasts, shares slump 10% despite robust AI chip demand Image 6: SK Hynix at the Nasdaq market in New York \n   4 hours agoLegal categoryTech employees call for US-backed global effort to manage risks of advanced AI Image 7: Illustration shows words \"Artificial Intelligence AI\\",
+                "score": 0.130398854452764
+              },
+              {
+                "title": "Accenture wins $821M Pentagon AI data platform contract",
+                "url": "https://federalnewsnetwork.com/defense-news/2026/07/accenture-wins-821m-pentagon-ai-data-platform-contract",
+                "source": "federalnewsnetwork.com",
+                "summary": "#### Advertise with Us\n\n# Accenture wins $821M Pentagon AI data platform contract\n\nAccenture won an $821 million contract to mature the Pentagon's War Data Platform, boosting AI-powered battlefield data and decision-making. [...] The platform aims to combine more than 1,500 data sources, both commercial and military, to securely provide intelligence, targeting data and more to frontline troops and their commands, the AI office said, calling it “one of [DoD]’s most vital data platforms for AI exploitation and mission advantage.” [...] The award advances the Pentagon’s effort to mature its War Data Platform, a clearinghouse of battlefield information that AI applications can crunch to advise troops on potential next moves and speed up wartime decisions.",
+                "score": 0.1297285959735784
+              },
+              {
+                "title": "An AI data center is being built on my grandma's garden",
+                "url": "https://www.ncronline.org/opinion/guest-voices/ai-data-center-being-built-my-grandmas-garden",
+                "source": "ncronline.org",
+                "summary": "He also reminds us to think of the physical impact of utilizing AI while reminding us that data centers are not neutral. He states: \"Current AI systems require enormous amounts of energy and water … which requires an extensive network of machines, cables, data centers and energy-intensive infrastructure … It is essential to develop more sustainable technological solutions.\" [...] When my grandma sold her house last year, she did not know the purchaser. Now her land and the surrounding 672 acres belong to the developer Vantage, who is building an AI data center that costs $15 billion. [...] the window so that those driving by on Highland Drive could see, and smile.",
+                "score": 0.12493450552382028
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G08_multiturn_url_completion",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "A URL supplied after clarification is carried into fetch without asking again."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Hãy đọc một nguồn để chuẩn bị bản tin."
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn gửi URL nguồn cần đọc nhé."
+        },
+        {
+          "role": "user",
+          "content": "Đây là URL: https://example.com"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "missing_info",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "fetch",
+          "args": {
+            "url": "https://example.com"
+          },
+          "result": {
+            "tool": "read_url",
+            "url": "https://example.com",
+            "items": [
+              {
+                "title": "Example Domain",
+                "url": "https://example.com",
+                "source": "example.com",
+                "summary": "# Example Domain\n\nThis domain is for use in documentation examples without needing permission. Avoid use in operations.\n\n[Learn more](https://iana.org/domains/example)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "G09_multiturn_audit_preferences",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "Audit preferences from the latest turn combine with items from earlier context."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Tôi có các item: [{\"title\":\"A\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"},{\"title\":\"A2\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn muốn kiểm tra trùng URL và có bắt buộc mỗi item phải có summary không?"
+        },
+        {
+          "role": "user",
+          "content": "Có, loại trùng và không bắt buộc summary."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "items": [
+                {
+                  "title": "A",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                {
+                  "title": "A2",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                }
+              ],
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_arg_value",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "citation_audit",
+          "args": {
+            "items": [
+              {
+                "title": "A",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              },
+              {
+                "title": "A2",
+                "url": "https://example.com/a",
+                "source": "example.com"
+              }
+            ],
+            "require_summary": false,
+            "deduplicate": true
+          },
+          "result": {
+            "tool": "citation_audit",
+            "items": [
+              {
+                "title": "A",
+                "url": "https://example.com/a",
+                "source": "example.com",
+                "summary": ""
+              }
+            ],
+            "rejected_items": [
+              {
+                "index": 1,
+                "item": {
+                  "title": "A2",
+                  "url": "https://example.com/a",
+                  "source": "example.com"
+                },
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "issues": [
+              {
+                "index": 1,
+                "status": "rejected",
+                "reasons": [
+                  "duplicate_url"
+                ]
+              }
+            ],
+            "input_count": 2,
+            "valid_count": 1,
+            "rejected_count": 1,
+            "all_cited": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "G10_multiturn_format_after_audit",
+      "phase": "B",
+      "suite": "group",
+      "case_suite": "group",
+      "is_multiturn": true,
+      "metadata": {
+        "what_it_tests": "After audit is complete in context the latest turn routes directly to digest formatting."
+      },
+      "input": [
+        {
+          "role": "user",
+          "content": "Item đã audit: [{\"title\":\"Tin AI\",\"url\":\"https://example.com/ai\",\"source\":\"example.com\",\"summary\":\"Nguồn đã được kiểm tra\",\"section\":\"Tin chính\"}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Các item đã sẵn sàng để trình bày."
+        },
+        {
+          "role": "user",
+          "content": "Tạo bản tin bằng template daily_ai_vn."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "template": "daily_ai_vn"
+            }
+          }
+        ]
+      },
+      "result": {
+        "passed": true,
+        "routing_correct": true,
+        "args_correct": true,
+        "actual_tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "items": [
+                {
+                  "title": "Tin AI",
+                  "url": "https://example.com/ai",
+                  "source": "example.com",
+                  "summary": "Nguồn đã được kiểm tra",
+                  "section": "Tin chính"
+                }
+              ],
+              "template": "daily_ai_vn"
+            }
+          }
+        ],
+        "actual_text": null,
+        "case_failure_type": "wrong_tool",
+        "observed_mismatch": null,
+        "failure_type": null,
+        "failures": []
+      },
+      "tool_results": [
+        {
+          "tool": "format",
+          "args": {
+            "items": [
+              {
+                "title": "Tin AI",
+                "url": "https://example.com/ai",
+                "source": "example.com",
+                "summary": "Nguồn đã được kiểm tra",
+                "section": "Tin chính"
+              }
+            ],
+            "template": "daily_ai_vn"
+          },
+          "result": {
+            "tool": "render_digest",
+            "template": "daily_ai_vn",
+            "markdown": "**Tin tức hôm nay**\n\n**Tin chính**\n- Nguồn đã được kiểm tra - [example.com](https://example.com/ai)\n",
+            "item_count": 1
+          }
+        }
+      ]
+    }
+  ]
+}

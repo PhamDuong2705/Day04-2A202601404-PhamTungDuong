@@ -1,7 +1,267 @@
 {
   "dataset_id": "day04_v2_research_group",
   "dataset_role": "group",
-  "description": "Template để NHÓM tự viết đúng 10 case: 5 single-turn dùng query và 5 multi-turn dùng turns. Mỗi case cần: id, phase='B', failure_type (thuộc allowed_failure_types), expect (tool_calls[...] hoặc no_tool=true), và metadata.what_it_tests. File để trống có chủ đích vì mỗi nhóm phải tự thiết kế các case này.",
+  "description": "Team-authored evaluation for the AI News Digest workflow: search, source reading, citation audit, formatting, no-tool boundaries, and multi-turn context handling.",
   "allowed_failure_types": ["wrong_tool", "wrong_arg_value", "wrong_boundary", "unnecessary_tool", "out_of_scope", "missing_info"],
-  "cases": []
+  "cases": [
+    {
+      "id": "G01_ai_news_today",
+      "phase": "B",
+      "failure_type": "wrong_arg_value",
+      "query": "Tìm 5 nguồn về AI nổi bật hôm nay để chuẩn bị bản tin.",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day",
+              "max_results": 5
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "AI News Digest search maps 'hôm nay' to news/day and preserves the requested source count."
+      }
+    },
+    {
+      "id": "G02_read_supplied_source",
+      "phase": "B",
+      "failure_type": "wrong_tool",
+      "query": "Đọc nguồn này để chuẩn bị bản tin AI: https://example.com",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "A supplied URL must go directly to fetch instead of lookup or clarification."
+      }
+    },
+    {
+      "id": "G03_audit_sources_without_summary",
+      "phase": "B",
+      "failure_type": "wrong_arg_value",
+      "query": "Kiểm tra trích dẫn cho các item sau, loại URL trùng nhưng không bắt buộc summary: [{\"title\":\"Tin A\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"},{\"title\":\"Tin A lặp\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"}]",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "The team tool is selected for existing items and carries explicit audit flags."
+      }
+    },
+    {
+      "id": "G04_format_audited_digest",
+      "phase": "B",
+      "failure_type": "wrong_tool",
+      "query": "Các item sau đã được audit và hợp lệ. Chỉ tạo AI News Digest bằng template daily_ai_vn: [{\"title\":\"Tin AI mẫu\",\"url\":\"https://example.com/ai\",\"source\":\"example.com\",\"summary\":\"Tóm tắt đã kiểm chứng\",\"section\":\"Tin chính\"}]",
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "template": "daily_ai_vn"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Already-audited items route to format without repeating research or citation audit."
+      }
+    },
+    {
+      "id": "G05_agent_capability_meta",
+      "phase": "B",
+      "failure_type": "unnecessary_tool",
+      "query": "Bạn có thể làm gì trong quy trình AI News Digest?",
+      "expect": {
+        "no_tool": true,
+        "behavior": "answer_without_tool"
+      },
+      "metadata": {
+        "what_it_tests": "A capability question is answered directly without spending tool quota."
+      }
+    },
+    {
+      "id": "G06_multiturn_timeframe_and_count",
+      "phase": "B",
+      "failure_type": "wrong_arg_value",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tôi muốn làm một bản tin AI."
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn muốn lấy tin trong khoảng thời gian nào và bao nhiêu nguồn?"
+        },
+        {
+          "role": "user",
+          "content": "Trong tuần này, lấy tối đa 3 nguồn."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "week",
+              "max_results": 3
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "The latest turn completes timeframe/count while the earlier turn supplies the AI topic."
+      }
+    },
+    {
+      "id": "G07_multiturn_topic_time_correction",
+      "phase": "B",
+      "failure_type": "wrong_arg_value",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tìm tin robotics trong tháng này."
+        },
+        {
+          "role": "assistant",
+          "content": "Mình sẽ tìm tin robotics trong tháng này."
+        },
+        {
+          "role": "user",
+          "content": "Đổi chủ đề thành AI và chỉ lấy hôm nay thôi."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "lookup",
+            "args": {
+              "query": "AI",
+              "topic": "news",
+              "timeframe": "day"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "The latest correction overrides both the earlier topic and timeframe."
+      }
+    },
+    {
+      "id": "G08_multiturn_url_completion",
+      "phase": "B",
+      "failure_type": "missing_info",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Hãy đọc một nguồn để chuẩn bị bản tin."
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn gửi URL nguồn cần đọc nhé."
+        },
+        {
+          "role": "user",
+          "content": "Đây là URL: https://example.com"
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "fetch",
+            "args": {
+              "url": "https://example.com"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "A URL supplied after clarification is carried into fetch without asking again."
+      }
+    },
+    {
+      "id": "G09_multiturn_audit_preferences",
+      "phase": "B",
+      "failure_type": "wrong_arg_value",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Tôi có các item: [{\"title\":\"A\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"},{\"title\":\"A2\",\"url\":\"https://example.com/a\",\"source\":\"example.com\"}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Bạn muốn kiểm tra trùng URL và có bắt buộc mỗi item phải có summary không?"
+        },
+        {
+          "role": "user",
+          "content": "Có, loại trùng và không bắt buộc summary."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "citation_audit",
+            "args": {
+              "require_summary": false,
+              "deduplicate": true
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "Audit preferences from the latest turn combine with items from earlier context."
+      }
+    },
+    {
+      "id": "G10_multiturn_format_after_audit",
+      "phase": "B",
+      "failure_type": "wrong_tool",
+      "turns": [
+        {
+          "role": "user",
+          "content": "Item đã audit: [{\"title\":\"Tin AI\",\"url\":\"https://example.com/ai\",\"source\":\"example.com\",\"summary\":\"Nguồn đã được kiểm tra\",\"section\":\"Tin chính\"}]"
+        },
+        {
+          "role": "assistant",
+          "content": "Các item đã sẵn sàng để trình bày."
+        },
+        {
+          "role": "user",
+          "content": "Tạo bản tin bằng template daily_ai_vn."
+        }
+      ],
+      "expect": {
+        "tool_calls": [
+          {
+            "name": "format",
+            "args": {
+              "template": "daily_ai_vn"
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "what_it_tests": "After audit is complete in context the latest turn routes directly to digest formatting."
+      }
+    }
+  ]
 }

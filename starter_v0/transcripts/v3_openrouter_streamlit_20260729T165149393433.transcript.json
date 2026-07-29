@@ -1,0 +1,746 @@
+{
+  "transcript_id": "v3_openrouter_streamlit_20260729T165149393433",
+  "version": "v3",
+  "artifact_version": "v3+p05f528bcd0ed+tae50b7488aab",
+  "prompt_hash": "05f528bcd0ed9c2bbc389234237847064310f99918915d18da76c48a91278b24",
+  "tools_hash": "ae50b7488aabdafcf70a21d93e1a8eb8a720ad918fca8e2aa3d3595e48bd4f4b",
+  "provider": "openrouter",
+  "model": "openai/gpt-4o-mini",
+  "surface": "streamlit",
+  "system_prompt": "D:\\Code VS\\VinLab\\Day04\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\system_prompt.md",
+  "tools": "D:\\Code VS\\VinLab\\Day04\\Day04-2A202601404-PhamTungDuong\\starter_v0\\artifacts\\tools.yaml",
+  "history_window": 5,
+  "max_tool_rounds": 5,
+  "created_at": "2026-07-29T16:51:49",
+  "updated_at": "2026-07-29T16:59:13",
+  "turns": [
+    {
+      "turn_index": 1,
+      "started_at": "2026-07-29T16:52:01",
+      "user": "kết quả cuộc thi robocon ",
+      "status": "answered",
+      "assistant_text": "Hiện tại, không có thông tin cụ thể nào về kết quả cuộc thi Robocon trong ngày hôm nay. Các kết quả tìm kiếm chủ yếu liên quan đến các chủ đề khác như nghệ thuật, công nghệ AI và robot. Nếu bạn cần thông tin cụ thể hơn về cuộc thi Robocon, hãy cho tôi biết để tôi có thể tìm kiếm thêm!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "lookup",
+              "args": {
+                "query": "kết quả cuộc thi robocon",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "lookup",
+              "args": {
+                "query": "kết quả cuộc thi robocon",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "kết quả cuộc thi robocon",
+                "topic": "news",
+                "timeframe": "day",
+                "items": [
+                  {
+                    "title": "Naperville Central teen takes 2nd in international art contest - Chicago Tribune",
+                    "url": "https://www.chicagotribune.com/2026/07/28/naperville-student-second-international-art-contest/",
+                    "source": "chicagotribune.com",
+                    "summary": "Naperville Sun |   Naperville Central teen takes 2nd in…. # Naperville Central teen takes 2nd in international art contest. Naperville Central High School student Claire Shen placed second in the 15- to 18-year-old age group of the 2026 Young Artists and Authors Showcase. The international competition invites the submission of original works of art, writing, photography, film and music to express the Sister Cities International mission. Shen’s work titled “Through the Looking Glass” was entered in the showcase’s Classic Art category. It was inspired by a train ride from Naperville to Chicago, she said. “Watching the neighborhoods transition into the city’s skyline, I began to see the journey as a metaphor for change, growth and the unknown future,” Shen said. I titled the piece, ‘Through the Looking Glass,’ because the train window serves as a portal between the familiar and the unknown.”. Michelle Mullins is a freelance reporter for the Naperville Sun.",
+                    "score": 0.024687458
+                  },
+                  {
+                    "title": "AI cyberattacks are coming? OpenAI experiment sparks new security debate - Ynetnews",
+                    "url": "https://www.ynetnews.com/tech-and-digital/article/r1iauiihfl",
+                    "source": "ynetnews.com",
+                    "summary": "## OpenAI’s AI agent experiment, which demonstrated an autonomous simulated cyber operation in a controlled environment, has intensified debate over how AI could reshape future cyberattacks as systems gain greater ability to plan and execute complex tasks. An OpenAI experiment in which an AI agent autonomously escaped a sandboxed environment and carried out a multi-step offensive operation has intensified a growing debate in the cybersecurity community: Are AI-powered cyberattacks already moving from theory into reality? The experiment was conducted in a controlled setting and was not a real-world attack. But security experts say it demonstrated a significant shift in the capabilities of AI systems — not because the model discovered a vulnerability, something AI tools have done before, but because it was able to independently plan and execute a sequence of actions resembling an end-to-end attack. Roie Cohen Duwek, CTO of Surf AI, said the most important lesson from the experiment was not the discovery of a single vulnerability, but the ability to coordinate an entire attack chain.",
+                    "score": 0.020225683
+                  },
+                  {
+                    "title": "Company releases video of moth-killing drone aimed at curbing mosquito population - NBC News",
+                    "url": "https://www.nbcnews.com/video/could-a-mini-drone-offer-new-a-solution-to-control-mosquito-population-267415109523",
+                    "source": "nbcnews.com",
+                    "summary": "* ## Viral video of new robot released by Chinese company raises questions about its abilities. * ## OpenAI says its AI models went rogue and hacked another tech company during test. * ## France Is First European Country to Implement Social Media Ban. * ## Inside the world of robot fight clubs. * ## How AI is Transforming the Way China’s Microdramas Are Made. * ## The future of public safety may start with a drone. * ## How Much of Social Media Health Trends Are Backed by Science? * ## How to Be a Tech-Savvy Traveler to Save Time and Money. Tech start-up TORNYOL released a video of its \"first air-to-air kill\" mini-drone and says it could kill mosquitoes \"at an unprecedented scale and cost.\" But experts say swatting the bugs away could be more complicated. ## Best of NBC News. ## A rare look at the Pope’s Garden in his summer house.",
+                    "score": 0.016942577
+                  },
+                  {
+                    "title": "New social media scam uses AI sob stories to target sympathetic buyers - NBC News",
+                    "url": "https://www.nbcnews.com/now/video/new-social-media-scam-uses-ai-sob-stories-to-target-sympathetic-buyers-267394117998",
+                    "source": "nbcnews.com",
+                    "summary": "New social media scam uses AI sob stories to target sympathetic buyers. ## Viral video of new robot released by Chinese company raises questions about its abilities. * ## Inside the world of robot fight clubs. * ## How AI is Transforming the Way China’s Microdramas Are Made. * ## The future of public safety may start with a drone. * ## How Much of Social Media Health Trends Are Backed by Science? * ## How to Be a Tech-Savvy Traveler to Save Time and Money. * ## AI-powered robots are new tech searching ocean floors for mines. AI scams are on the rise on social media, like a viral story about a bullied teen who crochets handbags he sells online, and experts say it could all be an Al-generated scam. NBC News' Vicky Nguyen spoke to experts who share red flags to watch for before hitting that buy button.July 28, 2026. ## Best of NBC News.",
+                    "score": 0.016709944
+                  },
+                  {
+                    "title": "The Ultimate Guide to AI and Robotics in Healthcare: From Diagnosis to Autonomous Intervention - AZoRobotics",
+                    "url": "https://www.azorobotics.com/Article.aspx?ArticleID=836",
+                    "source": "azorobotics.com",
+                    "summary": "Image 2: An AZoNetwork Site. Robotic Surgery Enters a New Era. Levels of Autonomy in the Operating Room. **Artificial intelligence (AI) and robotics have moved from experimental tools into core components of modern healthcare delivery. Today, algorithms assist radiologists in reading scans, support physicians in diagnosing disease, and guide surgical robots through procedures once performed entirely by hand. The transformation extends across nearly every stage of patient care, from early detection and treatment planning to physical intervention in the operating room. This article examines that progression in depth and explains how AI and robotics function in clinical diagnosis today. By registering and providing insight into your preferences you're joining a community of over 1m science interested individuals and help us to provide you with insightful content whilst keeping our service free. Many of these models rely on convolutional neural networks trained on large image datasets, allowing them to flag subtle patterns that a radiologist might miss during a routine review of hundreds of scans in a single shift.",
+                    "score": 0.016291577
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Hiện tại, không có thông tin cụ thể nào về kết quả cuộc thi Robocon trong ngày hôm nay. Các kết quả tìm kiếm chủ yếu liên quan đến các chủ đề khác như nghệ thuật, công nghệ AI và robot. Nếu bạn cần thông tin cụ thể hơn về cuộc thi Robocon, hãy cho tôi biết để tôi có thể tìm kiếm thêm!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "kết quả cuộc thi robocon",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "kết quả cuộc thi robocon",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "Naperville Central teen takes 2nd in international art contest - Chicago Tribune",
+                "url": "https://www.chicagotribune.com/2026/07/28/naperville-student-second-international-art-contest/",
+                "source": "chicagotribune.com",
+                "summary": "Naperville Sun |   Naperville Central teen takes 2nd in…. # Naperville Central teen takes 2nd in international art contest. Naperville Central High School student Claire Shen placed second in the 15- to 18-year-old age group of the 2026 Young Artists and Authors Showcase. The international competition invites the submission of original works of art, writing, photography, film and music to express the Sister Cities International mission. Shen’s work titled “Through the Looking Glass” was entered in the showcase’s Classic Art category. It was inspired by a train ride from Naperville to Chicago, she said. “Watching the neighborhoods transition into the city’s skyline, I began to see the journey as a metaphor for change, growth and the unknown future,” Shen said. I titled the piece, ‘Through the Looking Glass,’ because the train window serves as a portal between the familiar and the unknown.”. Michelle Mullins is a freelance reporter for the Naperville Sun.",
+                "score": 0.024687458
+              },
+              {
+                "title": "AI cyberattacks are coming? OpenAI experiment sparks new security debate - Ynetnews",
+                "url": "https://www.ynetnews.com/tech-and-digital/article/r1iauiihfl",
+                "source": "ynetnews.com",
+                "summary": "## OpenAI’s AI agent experiment, which demonstrated an autonomous simulated cyber operation in a controlled environment, has intensified debate over how AI could reshape future cyberattacks as systems gain greater ability to plan and execute complex tasks. An OpenAI experiment in which an AI agent autonomously escaped a sandboxed environment and carried out a multi-step offensive operation has intensified a growing debate in the cybersecurity community: Are AI-powered cyberattacks already moving from theory into reality? The experiment was conducted in a controlled setting and was not a real-world attack. But security experts say it demonstrated a significant shift in the capabilities of AI systems — not because the model discovered a vulnerability, something AI tools have done before, but because it was able to independently plan and execute a sequence of actions resembling an end-to-end attack. Roie Cohen Duwek, CTO of Surf AI, said the most important lesson from the experiment was not the discovery of a single vulnerability, but the ability to coordinate an entire attack chain.",
+                "score": 0.020225683
+              },
+              {
+                "title": "Company releases video of moth-killing drone aimed at curbing mosquito population - NBC News",
+                "url": "https://www.nbcnews.com/video/could-a-mini-drone-offer-new-a-solution-to-control-mosquito-population-267415109523",
+                "source": "nbcnews.com",
+                "summary": "* ## Viral video of new robot released by Chinese company raises questions about its abilities. * ## OpenAI says its AI models went rogue and hacked another tech company during test. * ## France Is First European Country to Implement Social Media Ban. * ## Inside the world of robot fight clubs. * ## How AI is Transforming the Way China’s Microdramas Are Made. * ## The future of public safety may start with a drone. * ## How Much of Social Media Health Trends Are Backed by Science? * ## How to Be a Tech-Savvy Traveler to Save Time and Money. Tech start-up TORNYOL released a video of its \"first air-to-air kill\" mini-drone and says it could kill mosquitoes \"at an unprecedented scale and cost.\" But experts say swatting the bugs away could be more complicated. ## Best of NBC News. ## A rare look at the Pope’s Garden in his summer house.",
+                "score": 0.016942577
+              },
+              {
+                "title": "New social media scam uses AI sob stories to target sympathetic buyers - NBC News",
+                "url": "https://www.nbcnews.com/now/video/new-social-media-scam-uses-ai-sob-stories-to-target-sympathetic-buyers-267394117998",
+                "source": "nbcnews.com",
+                "summary": "New social media scam uses AI sob stories to target sympathetic buyers. ## Viral video of new robot released by Chinese company raises questions about its abilities. * ## Inside the world of robot fight clubs. * ## How AI is Transforming the Way China’s Microdramas Are Made. * ## The future of public safety may start with a drone. * ## How Much of Social Media Health Trends Are Backed by Science? * ## How to Be a Tech-Savvy Traveler to Save Time and Money. * ## AI-powered robots are new tech searching ocean floors for mines. AI scams are on the rise on social media, like a viral story about a bullied teen who crochets handbags he sells online, and experts say it could all be an Al-generated scam. NBC News' Vicky Nguyen spoke to experts who share red flags to watch for before hitting that buy button.July 28, 2026. ## Best of NBC News.",
+                "score": 0.016709944
+              },
+              {
+                "title": "The Ultimate Guide to AI and Robotics in Healthcare: From Diagnosis to Autonomous Intervention - AZoRobotics",
+                "url": "https://www.azorobotics.com/Article.aspx?ArticleID=836",
+                "source": "azorobotics.com",
+                "summary": "Image 2: An AZoNetwork Site. Robotic Surgery Enters a New Era. Levels of Autonomy in the Operating Room. **Artificial intelligence (AI) and robotics have moved from experimental tools into core components of modern healthcare delivery. Today, algorithms assist radiologists in reading scans, support physicians in diagnosing disease, and guide surgical robots through procedures once performed entirely by hand. The transformation extends across nearly every stage of patient care, from early detection and treatment planning to physical intervention in the operating room. This article examines that progression in depth and explains how AI and robotics function in clinical diagnosis today. By registering and providing insight into your preferences you're joining a community of over 1m science interested individuals and help us to provide you with insightful content whilst keeping our service free. Many of these models rely on convolutional neural networks trained on large image datasets, allowing them to flag subtle patterns that a radiologist might miss during a routine review of hundreds of scans in a single shift.",
+                "score": 0.016291577
+              }
+            ]
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:52:10"
+    },
+    {
+      "turn_index": 2,
+      "started_at": "2026-07-29T16:53:13",
+      "user": "kết quả world cup 2026",
+      "status": "answered",
+      "assistant_text": "Dưới đây là một số thông tin mới nhất về World Cup 2026:\n\n1. **FIFA World Cup 2026: North America built the stage. The attention went everywhere**  \n   - **Nguồn**: [yougov.com](https://yougov.com/en-us/articles/55256-fifa-world-cup-2026-the-worlds-shared-stage)  \n   - **Tóm tắt**: World Cup 2026 đã thu hút sự chú ý toàn cầu, với 46 đội bóng quốc gia theo dõi sự gia tăng lượng tìm kiếm trực tuyến. Ngày khai mạc có tổng cộng 12.8 triệu lượt tìm kiếm, và con số này đã tăng lên hơn 27 triệu khi trận chung kết giữa Tây Ban Nha và Argentina diễn ra.\n\n2. **FIFA Faces Revolt Over $20B World Cup Sell-Off Plan**  \n   - **Nguồn**: [hollywoodreporter.com](https://www.hollywoodreporter.com/business/business-news/fifa-world-cup-unit-sale-plan-backlash-kushner-1236658936)  \n   - **Tóm tắt**: FIFA đã bị chỉ trích vì việc thương mại hóa World Cup 2026, với việc mở rộng số đội từ 32 lên 48 và cho phép thị trường bán lại vé đắt đỏ. Giải đấu này được dự đoán sẽ mang lại doanh thu lớn nhất trong lịch sử.\n\n3. **Listen Live to Spain vs. Argentina in the FIFA World Cup Final on SiriusXM**  \n   - **Nguồn**: [siriusxm.com](https://www.siriusxm.com/blog/spain-argentina-world-cup-final-listen)  \n   - **Tóm tắt**: Trận chung kết World Cup 2026 giữa Tây Ban Nha và Argentina sẽ diễn ra tại East Rutherford, New Jersey, và có thể được nghe trực tiếp trên SiriusXM.\n\n4. **What's Next For USA After 2026 World Cup? Jozy Altidore, Clint Dempsey Weigh In | FOX Sports**  \n   - **Nguồn**: [foxsports.com](https://www.foxsports.com/stories/soccer/usmnt-world-cup-belgium-loss-clint-dempsey-jozy-altidore)  \n   - **Tóm tắt**: Đội tuyển Mỹ đã bị loại khỏi World Cup 2026 sau thất bại 4-1 trước Bỉ ở vòng 16 đội. Các cựu cầu thủ Clint Dempsey và Jozy Altidore đã chia sẻ cảm xúc của họ về trận thua này.\n\nNếu bạn cần thêm thông tin chi tiết hoặc có câu hỏi khác, hãy cho tôi biết!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "lookup",
+              "args": {
+                "query": "World Cup 2026",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "lookup",
+              "args": {
+                "query": "World Cup 2026",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "World Cup 2026",
+                "topic": "news",
+                "timeframe": "day",
+                "items": [
+                  {
+                    "title": "FIFA World Cup 2026: North America built the stage. The attention went everywhere",
+                    "url": "https://yougov.com/en-us/articles/55256-fifa-world-cup-2026-the-worlds-shared-stage",
+                    "source": "yougov.com",
+                    "summary": "Contact usor visit Member helpdesk\n\n# FIFA World Cup 2026: North America built the stage. The attention went everywhere\n\nJuly 28, 2026\n\nThe first North American FIFA World Cup in 32 years showed how completely the world's game connects audiences everywhere. All 46 national football teams tracked in YouGov's Signal platform grew their global search audience in the tournament's first month, with 12 nations seeing average daily search increase by more than 1,000%.\n\nKey insights: [...] On opening day of the FIFA World Cup 2026, daily search across the 46 tracked national teams sat at 12.8 million searches combined. By the time Spain and Argentina prepared to face off in the final game, this figure rose to more than 27 million, a 113% lift, with the single-day high for the entire field peaking at 62 million on July 12. [...] ## Methodology\n\nSource: YouGov Signal platform: Global search volume and Instagram followers.\n\n4-week rolling averages through July 18, 2026 vs. June 11, 2026 as the Opening Day baseline.\n\nSearch volume is a relative value of daily online searches for a specific global entity—here, a national team or player.\n\nGet in touchExplore surveys\n\nSubscribe to the YouGov newsletter\n\n## Related topics",
+                    "score": 0.7293082
+                  },
+                  {
+                    "title": "FIFA Faces Revolt Over $20B World Cup Sell-Off Plan",
+                    "url": "https://www.hollywoodreporter.com/business/business-news/fifa-world-cup-unit-sale-plan-backlash-kushner-1236658936",
+                    "source": "hollywoodreporter.com",
+                    "summary": "[Movies\n\n### 'As Light as Air' Is a Hypnotic Experimental Doc About Collective Ecstasy in a City in Pakistan (Locarno Trailer)](\n\nHarry Kane #9 of England competes for the ball against Brian Gutierrez #26 of Mexico during the FIFA World Cup 2026 Round of 16 match between Mexico and England at Mexico City Stadium on July 05, 2026 in Mexico City, Mexico.\n\n[Business\n\n### Banijay Entertainment First-Half Revenue Drops 2 Percent in First Post-All3Media Deal Update](\n\n### Related Stories [...] 'As Light as Air' film still\n\n### 'As Light as Air' Is a Hypnotic Experimental Doc About Collective Ecstasy in a City in Pakistan (Locarno Trailer)\n\nHarry Kane #9 of England competes for the ball against Brian Gutierrez #26 of Mexico during the FIFA World Cup 2026 Round of 16 match between Mexico and England at Mexico City Stadium on July 05, 2026 in Mexico City, Mexico.\n\n### Banijay Entertainment First-Half Revenue Drops 2 Percent in First Post-All3Media Deal Update [...] FIFA and Infantino have been sharply criticized for the commercialization of the recent World Cup, held in the U.S., Canada and Mexico. FIFA expanded the event from 32 to 48 teams, greatly increasing the number of games, allowed a pricey resale market for tickets, and introduced controversial “hydration breaks” which stopped play and allowed for additional advertising during matches. The 2026 tournament was the most lucrative in history, with FIFA expected to announce revenues of more than $15",
+                    "score": 0.6628188
+                  },
+                  {
+                    "title": "Listen Live to Spain vs. Argentina in the FIFA World Cup Final on SiriusXM",
+                    "url": "https://www.siriusxm.com/blog/spain-argentina-world-cup-final-listen",
+                    "source": "siriusxm.com",
+                    "summary": "SiriusXM\n\n# Listen Live to Spain vs. Argentina in the FIFA World Cup 2026™ Final\n\nHear every moment of the World Cup Final live from East Rutherford, New Jersey, on SiriusXM.\n\nThe 2026 FIFA World Cup™ comes down to one final match. On Sunday, July 19, Spain and Argentina meet in the FIFA World Cup Final with the sport’s biggest prize on the line.\n\n## How to Listen [...] Listen Live to France vs. England in the FIFA World Cup 2026™ Third-Place Playoff\n\nEngland vs. Argentina FIFA World Cup 2026™ Semifinal: Listen Live on SiriusXM",
+                    "score": 0.65940565
+                  },
+                  {
+                    "title": "What's Next For USA After 2026 World Cup? Jozy Altidore, Clint Dempsey Weigh In | FOX Sports",
+                    "url": "https://www.foxsports.com/stories/soccer/usmnt-world-cup-belgium-loss-clint-dempsey-jozy-altidore",
+                    "source": "foxsports.com",
+                    "summary": "More than three weeks have passed since the U.S. men’s national team crashed out of the 2026 FIFA World Cup with a resounding 4-1 loss to Belgium in the round of 16, and for USA greats Clint Dempsey and Jozy Altidore, the lopsided defeat still stings.\n\n\"I haven't even watched the game back,\" Altidore, the program’s third all-time goalscoring leader behind only Dempsey and Landon Donovan, told me after the tournament was over. \"It’s difficult to swallow.\" [...] ### Social media reacts as Messi, Argentina win 2022 World Cup\n\nFIFA WORLD CUP MEN Trending Image: When Is The Next World Cup?\n\n### When Is The Next World Cup?\n\nFIFA WORLD CUP MEN Trending Image: Zlatan, Henry and Alexi Share Their Favorite Moments From The 2026 World Cup\n\n### Zlatan, Henry and Alexi Share Their Favorite Moments From The 2026 World Cup\n\nFIFA WORLD CUP MEN Trending Image: Lionel Scaloni Hints at Argentina Exit After World Cup Final Defeat to Spain [...] Best Moments of the 2026 FIFA World Cup™ 🏆 One World. One Trophy. One Unforgettable Summer ❤️\nshare on facebook\nshare on x\nshare on reddit\nshare on link\nFIFA WORLD CUP MEN Trending Image: Chris 'The Bear' Fallica's World Cup Best Bets Today — Match Day 29\n\n### Chris 'The Bear' Fallica's World Cup Best Bets Today — Match Day 29\n\nFIFA WORLD CUP MEN Trending Image: How Grass Technology Gave USA A Pitch-Perfect Assist In Its Big World Cup Win",
+                    "score": 0.6152965
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Dưới đây là một số thông tin mới nhất về World Cup 2026:\n\n1. **FIFA World Cup 2026: North America built the stage. The attention went everywhere**  \n   - **Nguồn**: [yougov.com](https://yougov.com/en-us/articles/55256-fifa-world-cup-2026-the-worlds-shared-stage)  \n   - **Tóm tắt**: World Cup 2026 đã thu hút sự chú ý toàn cầu, với 46 đội bóng quốc gia theo dõi sự gia tăng lượng tìm kiếm trực tuyến. Ngày khai mạc có tổng cộng 12.8 triệu lượt tìm kiếm, và con số này đã tăng lên hơn 27 triệu khi trận chung kết giữa Tây Ban Nha và Argentina diễn ra.\n\n2. **FIFA Faces Revolt Over $20B World Cup Sell-Off Plan**  \n   - **Nguồn**: [hollywoodreporter.com](https://www.hollywoodreporter.com/business/business-news/fifa-world-cup-unit-sale-plan-backlash-kushner-1236658936)  \n   - **Tóm tắt**: FIFA đã bị chỉ trích vì việc thương mại hóa World Cup 2026, với việc mở rộng số đội từ 32 lên 48 và cho phép thị trường bán lại vé đắt đỏ. Giải đấu này được dự đoán sẽ mang lại doanh thu lớn nhất trong lịch sử.\n\n3. **Listen Live to Spain vs. Argentina in the FIFA World Cup Final on SiriusXM**  \n   - **Nguồn**: [siriusxm.com](https://www.siriusxm.com/blog/spain-argentina-world-cup-final-listen)  \n   - **Tóm tắt**: Trận chung kết World Cup 2026 giữa Tây Ban Nha và Argentina sẽ diễn ra tại East Rutherford, New Jersey, và có thể được nghe trực tiếp trên SiriusXM.\n\n4. **What's Next For USA After 2026 World Cup? Jozy Altidore, Clint Dempsey Weigh In | FOX Sports**  \n   - **Nguồn**: [foxsports.com](https://www.foxsports.com/stories/soccer/usmnt-world-cup-belgium-loss-clint-dempsey-jozy-altidore)  \n   - **Tóm tắt**: Đội tuyển Mỹ đã bị loại khỏi World Cup 2026 sau thất bại 4-1 trước Bỉ ở vòng 16 đội. Các cựu cầu thủ Clint Dempsey và Jozy Altidore đã chia sẻ cảm xúc của họ về trận thua này.\n\nNếu bạn cần thêm thông tin chi tiết hoặc có câu hỏi khác, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "World Cup 2026",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "World Cup 2026",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "FIFA World Cup 2026: North America built the stage. The attention went everywhere",
+                "url": "https://yougov.com/en-us/articles/55256-fifa-world-cup-2026-the-worlds-shared-stage",
+                "source": "yougov.com",
+                "summary": "Contact usor visit Member helpdesk\n\n# FIFA World Cup 2026: North America built the stage. The attention went everywhere\n\nJuly 28, 2026\n\nThe first North American FIFA World Cup in 32 years showed how completely the world's game connects audiences everywhere. All 46 national football teams tracked in YouGov's Signal platform grew their global search audience in the tournament's first month, with 12 nations seeing average daily search increase by more than 1,000%.\n\nKey insights: [...] On opening day of the FIFA World Cup 2026, daily search across the 46 tracked national teams sat at 12.8 million searches combined. By the time Spain and Argentina prepared to face off in the final game, this figure rose to more than 27 million, a 113% lift, with the single-day high for the entire field peaking at 62 million on July 12. [...] ## Methodology\n\nSource: YouGov Signal platform: Global search volume and Instagram followers.\n\n4-week rolling averages through July 18, 2026 vs. June 11, 2026 as the Opening Day baseline.\n\nSearch volume is a relative value of daily online searches for a specific global entity—here, a national team or player.\n\nGet in touchExplore surveys\n\nSubscribe to the YouGov newsletter\n\n## Related topics",
+                "score": 0.7293082
+              },
+              {
+                "title": "FIFA Faces Revolt Over $20B World Cup Sell-Off Plan",
+                "url": "https://www.hollywoodreporter.com/business/business-news/fifa-world-cup-unit-sale-plan-backlash-kushner-1236658936",
+                "source": "hollywoodreporter.com",
+                "summary": "[Movies\n\n### 'As Light as Air' Is a Hypnotic Experimental Doc About Collective Ecstasy in a City in Pakistan (Locarno Trailer)](\n\nHarry Kane #9 of England competes for the ball against Brian Gutierrez #26 of Mexico during the FIFA World Cup 2026 Round of 16 match between Mexico and England at Mexico City Stadium on July 05, 2026 in Mexico City, Mexico.\n\n[Business\n\n### Banijay Entertainment First-Half Revenue Drops 2 Percent in First Post-All3Media Deal Update](\n\n### Related Stories [...] 'As Light as Air' film still\n\n### 'As Light as Air' Is a Hypnotic Experimental Doc About Collective Ecstasy in a City in Pakistan (Locarno Trailer)\n\nHarry Kane #9 of England competes for the ball against Brian Gutierrez #26 of Mexico during the FIFA World Cup 2026 Round of 16 match between Mexico and England at Mexico City Stadium on July 05, 2026 in Mexico City, Mexico.\n\n### Banijay Entertainment First-Half Revenue Drops 2 Percent in First Post-All3Media Deal Update [...] FIFA and Infantino have been sharply criticized for the commercialization of the recent World Cup, held in the U.S., Canada and Mexico. FIFA expanded the event from 32 to 48 teams, greatly increasing the number of games, allowed a pricey resale market for tickets, and introduced controversial “hydration breaks” which stopped play and allowed for additional advertising during matches. The 2026 tournament was the most lucrative in history, with FIFA expected to announce revenues of more than $15",
+                "score": 0.6628188
+              },
+              {
+                "title": "Listen Live to Spain vs. Argentina in the FIFA World Cup Final on SiriusXM",
+                "url": "https://www.siriusxm.com/blog/spain-argentina-world-cup-final-listen",
+                "source": "siriusxm.com",
+                "summary": "SiriusXM\n\n# Listen Live to Spain vs. Argentina in the FIFA World Cup 2026™ Final\n\nHear every moment of the World Cup Final live from East Rutherford, New Jersey, on SiriusXM.\n\nThe 2026 FIFA World Cup™ comes down to one final match. On Sunday, July 19, Spain and Argentina meet in the FIFA World Cup Final with the sport’s biggest prize on the line.\n\n## How to Listen [...] Listen Live to France vs. England in the FIFA World Cup 2026™ Third-Place Playoff\n\nEngland vs. Argentina FIFA World Cup 2026™ Semifinal: Listen Live on SiriusXM",
+                "score": 0.65940565
+              },
+              {
+                "title": "What's Next For USA After 2026 World Cup? Jozy Altidore, Clint Dempsey Weigh In | FOX Sports",
+                "url": "https://www.foxsports.com/stories/soccer/usmnt-world-cup-belgium-loss-clint-dempsey-jozy-altidore",
+                "source": "foxsports.com",
+                "summary": "More than three weeks have passed since the U.S. men’s national team crashed out of the 2026 FIFA World Cup with a resounding 4-1 loss to Belgium in the round of 16, and for USA greats Clint Dempsey and Jozy Altidore, the lopsided defeat still stings.\n\n\"I haven't even watched the game back,\" Altidore, the program’s third all-time goalscoring leader behind only Dempsey and Landon Donovan, told me after the tournament was over. \"It’s difficult to swallow.\" [...] ### Social media reacts as Messi, Argentina win 2022 World Cup\n\nFIFA WORLD CUP MEN Trending Image: When Is The Next World Cup?\n\n### When Is The Next World Cup?\n\nFIFA WORLD CUP MEN Trending Image: Zlatan, Henry and Alexi Share Their Favorite Moments From The 2026 World Cup\n\n### Zlatan, Henry and Alexi Share Their Favorite Moments From The 2026 World Cup\n\nFIFA WORLD CUP MEN Trending Image: Lionel Scaloni Hints at Argentina Exit After World Cup Final Defeat to Spain [...] Best Moments of the 2026 FIFA World Cup™ 🏆 One World. One Trophy. One Unforgettable Summer ❤️\nshare on facebook\nshare on x\nshare on reddit\nshare on link\nFIFA WORLD CUP MEN Trending Image: Chris 'The Bear' Fallica's World Cup Best Bets Today — Match Day 29\n\n### Chris 'The Bear' Fallica's World Cup Best Bets Today — Match Day 29\n\nFIFA WORLD CUP MEN Trending Image: How Grass Technology Gave USA A Pitch-Perfect Assist In Its Big World Cup Win",
+                "score": 0.6152965
+              }
+            ]
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:53:31"
+    },
+    {
+      "turn_index": 3,
+      "started_at": "2026-07-29T16:54:38",
+      "user": "kết quả hà nội thi thpt quốc gia điểm trung bình các môn 2026",
+      "status": "answered",
+      "assistant_text": "Hiện tại, không có thông tin cụ thể nào về điểm trung bình các môn thi THPT Quốc gia 2026 tại Hà Nội. Các kết quả tìm kiếm chủ yếu liên quan đến các sự kiện khác và không cung cấp thông tin về kỳ thi này.\n\nNếu bạn cần thông tin chi tiết hơn hoặc có câu hỏi khác, hãy cho tôi biết để tôi có thể hỗ trợ thêm!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "lookup",
+              "args": {
+                "query": "Hà Nội thi THPT Quốc gia 2026 điểm trung bình các môn",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "lookup",
+              "args": {
+                "query": "Hà Nội thi THPT Quốc gia 2026 điểm trung bình các môn",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "Hà Nội thi THPT Quốc gia 2026 điểm trung bình các môn",
+                "topic": "news",
+                "timeframe": "day",
+                "items": [
+                  {
+                    "title": "India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 28, Tuesday - ESPN",
+                    "url": "https://www.espn.com/commonwealth-games/story/_/id/49460247/india-commonwealth-games-2026-full-schedule-medal-events-fixtures-july-28-tuesday",
+                    "source": "espn.com",
+                    "summary": "India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 28, Tuesday. India at Commonwealth Games 2026: Live updates from Glasgow on July 28, Tuesday. India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 29, Wednesday. Darkness of domestic abuse to gold in Glasgow: Sharmila's incredible win at CWG 26. India at Commonwealth Games 2026: Sharmila wins gold, Gyaneshwari, Sarvesh, Ajaya win silver, Bindyarani, Shilpa bronze on July 27. India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 27, Monday. India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 25, Saturday. India at Commonwealth Games 2026: Jhandu Kumar wins bronze in para powerlifting to close out day 1. Commonwealth Games 2026: Full schedule of India's contingent in Glasgow. The Commonwealth Games 2026 is underway in Glasgow and Tuesday, July 28 will see India continue their campaign in athletics, weightlifting, boxing, and swimming.",
+                    "score": 0.028374104
+                  },
+                  {
+                    "title": "New York City Rent Hits a New High: Just in Time for the Class of 2026 - Yahoo Finance Singapore",
+                    "url": "https://sg.finance.yahoo.com/news/york-city-rent-hits-high-100000388.html",
+                    "source": "sg.finance.yahoo.com",
+                    "summary": "# New York City Rent Hits a New High: Just in Time for the Class of 2026. *Manhattan Rents Are Up 9.0% as All Four Boroughs Post Increases in Realtor.com®'s Q2 2026 NYC Rental Report*. The median asking rent climbed to $3,707 in the second quarter of 2026, up $164, or 4.6%, year over year. A studio apartment alone would consume 38.2% of a typical Computer Science graduate's starting New York City salary and 45.2% of a Business graduate's, according to the Q2 2026 NYC Rental Report from Realtor.com®. Measuring the class of 2026 national salary against the median asking rent for a studio, a typical studio across the 50 largest U.S. metros would consume just 20.9% of a Computer Science graduate's salary and 24.8% of a Business graduate's, roughly half the share required in New York City. **Studio Rent as a Share of Class of 2026 Graduate Salary, 2026 Q2**.",
+                    "score": 0.022476401
+                  },
+                  {
+                    "title": "Tennessee Titans 2026 schedule and scores - Yahoo Sports",
+                    "url": "https://sports.yahoo.com/articles/tennessee-titans-2026-schedule-scores-161825494.html",
+                    "source": "sports.yahoo.com",
+                    "summary": "# Tennessee Titans 2026 schedule and scores. The Tennessee Titans once again have no primetime games and mostly noon kickoffs in 2026. The Titans are a 2.5-point favorite in the opener against the Jets. Week 2: Sunday, August 23, 2026 vs. Sunday, September 13, 2026 vs. New York Jets 12:00 PM Central on CBS. Sunday, September 27, 2026 @ New York Giants 12:00 PM Central on CBS. Sunday, October 4, 2026 @ Baltimore Ravens 12:00 PM Central on CBS. Houston Texans 12:00 PM Central on CBS. Sunday, October 18, 2026 @ Indianapolis Colts 12:00 PM Central on FOX. Sunday, November 11, 2026 @ Cincinnati Bengals 12:00 PM Central on CBS. Jacksonville Jaguars 12:00 PM Central on FOX. Sunday, November 22, 2026 @ Dallas Cowboys 12:00 PM Central on FOX. Sunday, November 29, 2026 @ Jacksonville Jaguars 3:05 PM Central on CBS. Sunday, December 13, 2026 @ Detroit Lions 12:00 PM Central on FOX. Indianapolis Colts 12:00 PM Central on CBS.",
+                    "score": 0.020695398
+                  },
+                  {
+                    "title": "Stream NCAA Football Videos on Watch ESPN - ESPN",
+                    "url": "https://www.espn.com/watch/catalog/0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+                    "source": "espn.com",
+                    "summary": "## Follow ESPN India. ## India at Commonwealth Games 2026: Live updates from Glasgow on July 29, Wednesday. Follow for live updates as India aim to add to their medal tally on Day 6 of the 2026 Commonwealth Games. ## India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 29, Wednesday. Here's a look at India's schedule at the 2026 Commonwealth Games on Wednesday, July 29. * India's medals at Commonwealth Games: Live tracker. ## 2026 COMMONWEALTH GAMES. ### India at CWG 2026, Day 5. ## India at Commonwealth Games 2026: Gulveer Singh, Harjinder Kaur win silvers on July 28, Tuesday. ## Darkness of domestic abuse to gold in Glasgow: Sharmila's incredible win at CWG 26. * Commonwealth Games 2026 Medals Tally. ## Ogden explains FIFA's plan to sell stakes in the World Cup. ESPN's coverage of the 2026 Commonwealth Games in Glasgow. Here's the 2026 sporting calendar to keep track of big tournaments and ESPN India's coverage.",
+                    "score": 0.020225683
+                  },
+                  {
+                    "title": "Vietnam detains deputy agriculture minister in durian export probe - Free Malaysia Today",
+                    "url": "https://www.freemalaysiatoday.com/category/highlight/2026/07/29/vietnam-detains-deputy-agriculture-minister-in-durian-export-probe",
+                    "source": "freemalaysiatoday.com",
+                    "summary": "## The arrest marks the latest expansion in a probe centered on certification procedures for durian shipments to China. HANOI: Vietnamese police detained four people, including the deputy minister of agriculture and environment, on allegations of accepting bribes as part of an expanding investigation into corruption linked to durian exports to China. Deputy minister Hoang Trung is accused of abusing his position by issuing illegal policies, including allegedly creating “sub-licenses” to serve vested interests and generate “particularly large” illicit gains linked to durian exports, according to a statement on the public security ministry’s website. The alleged breaches caused “serious damage” to the legitimate rights and interests of durian growers and export businesses, resulting in “exceptionally” large losses to the state budget and “negatively” impacting the reputation of the entire Vietnamese agricultural sector, the statement said. The arrests mark the latest expansion in a probe centered on certification procedures for durian shipments to China involving the Center for Testing, Certification and Quality Services under the agriculture ministry, NhoNho Technology Co. and Thuy Fruit Co., according to the statement.",
+                    "score": 0.018834975
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Hiện tại, không có thông tin cụ thể nào về điểm trung bình các môn thi THPT Quốc gia 2026 tại Hà Nội. Các kết quả tìm kiếm chủ yếu liên quan đến các sự kiện khác và không cung cấp thông tin về kỳ thi này.\n\nNếu bạn cần thông tin chi tiết hơn hoặc có câu hỏi khác, hãy cho tôi biết để tôi có thể hỗ trợ thêm!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "Hà Nội thi THPT Quốc gia 2026 điểm trung bình các môn",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "Hà Nội thi THPT Quốc gia 2026 điểm trung bình các môn",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 28, Tuesday - ESPN",
+                "url": "https://www.espn.com/commonwealth-games/story/_/id/49460247/india-commonwealth-games-2026-full-schedule-medal-events-fixtures-july-28-tuesday",
+                "source": "espn.com",
+                "summary": "India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 28, Tuesday. India at Commonwealth Games 2026: Live updates from Glasgow on July 28, Tuesday. India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 29, Wednesday. Darkness of domestic abuse to gold in Glasgow: Sharmila's incredible win at CWG 26. India at Commonwealth Games 2026: Sharmila wins gold, Gyaneshwari, Sarvesh, Ajaya win silver, Bindyarani, Shilpa bronze on July 27. India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 27, Monday. India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 25, Saturday. India at Commonwealth Games 2026: Jhandu Kumar wins bronze in para powerlifting to close out day 1. Commonwealth Games 2026: Full schedule of India's contingent in Glasgow. The Commonwealth Games 2026 is underway in Glasgow and Tuesday, July 28 will see India continue their campaign in athletics, weightlifting, boxing, and swimming.",
+                "score": 0.028374104
+              },
+              {
+                "title": "New York City Rent Hits a New High: Just in Time for the Class of 2026 - Yahoo Finance Singapore",
+                "url": "https://sg.finance.yahoo.com/news/york-city-rent-hits-high-100000388.html",
+                "source": "sg.finance.yahoo.com",
+                "summary": "# New York City Rent Hits a New High: Just in Time for the Class of 2026. *Manhattan Rents Are Up 9.0% as All Four Boroughs Post Increases in Realtor.com®'s Q2 2026 NYC Rental Report*. The median asking rent climbed to $3,707 in the second quarter of 2026, up $164, or 4.6%, year over year. A studio apartment alone would consume 38.2% of a typical Computer Science graduate's starting New York City salary and 45.2% of a Business graduate's, according to the Q2 2026 NYC Rental Report from Realtor.com®. Measuring the class of 2026 national salary against the median asking rent for a studio, a typical studio across the 50 largest U.S. metros would consume just 20.9% of a Computer Science graduate's salary and 24.8% of a Business graduate's, roughly half the share required in New York City. **Studio Rent as a Share of Class of 2026 Graduate Salary, 2026 Q2**.",
+                "score": 0.022476401
+              },
+              {
+                "title": "Tennessee Titans 2026 schedule and scores - Yahoo Sports",
+                "url": "https://sports.yahoo.com/articles/tennessee-titans-2026-schedule-scores-161825494.html",
+                "source": "sports.yahoo.com",
+                "summary": "# Tennessee Titans 2026 schedule and scores. The Tennessee Titans once again have no primetime games and mostly noon kickoffs in 2026. The Titans are a 2.5-point favorite in the opener against the Jets. Week 2: Sunday, August 23, 2026 vs. Sunday, September 13, 2026 vs. New York Jets 12:00 PM Central on CBS. Sunday, September 27, 2026 @ New York Giants 12:00 PM Central on CBS. Sunday, October 4, 2026 @ Baltimore Ravens 12:00 PM Central on CBS. Houston Texans 12:00 PM Central on CBS. Sunday, October 18, 2026 @ Indianapolis Colts 12:00 PM Central on FOX. Sunday, November 11, 2026 @ Cincinnati Bengals 12:00 PM Central on CBS. Jacksonville Jaguars 12:00 PM Central on FOX. Sunday, November 22, 2026 @ Dallas Cowboys 12:00 PM Central on FOX. Sunday, November 29, 2026 @ Jacksonville Jaguars 3:05 PM Central on CBS. Sunday, December 13, 2026 @ Detroit Lions 12:00 PM Central on FOX. Indianapolis Colts 12:00 PM Central on CBS.",
+                "score": 0.020695398
+              },
+              {
+                "title": "Stream NCAA Football Videos on Watch ESPN - ESPN",
+                "url": "https://www.espn.com/watch/catalog/0f8e3d42-fa27-3f60-9e8d-276e4892f50e",
+                "source": "espn.com",
+                "summary": "## Follow ESPN India. ## India at Commonwealth Games 2026: Live updates from Glasgow on July 29, Wednesday. Follow for live updates as India aim to add to their medal tally on Day 6 of the 2026 Commonwealth Games. ## India at Commonwealth Games 2026: Full schedule of medal events and fixtures on July 29, Wednesday. Here's a look at India's schedule at the 2026 Commonwealth Games on Wednesday, July 29. * India's medals at Commonwealth Games: Live tracker. ## 2026 COMMONWEALTH GAMES. ### India at CWG 2026, Day 5. ## India at Commonwealth Games 2026: Gulveer Singh, Harjinder Kaur win silvers on July 28, Tuesday. ## Darkness of domestic abuse to gold in Glasgow: Sharmila's incredible win at CWG 26. * Commonwealth Games 2026 Medals Tally. ## Ogden explains FIFA's plan to sell stakes in the World Cup. ESPN's coverage of the 2026 Commonwealth Games in Glasgow. Here's the 2026 sporting calendar to keep track of big tournaments and ESPN India's coverage.",
+                "score": 0.020225683
+              },
+              {
+                "title": "Vietnam detains deputy agriculture minister in durian export probe - Free Malaysia Today",
+                "url": "https://www.freemalaysiatoday.com/category/highlight/2026/07/29/vietnam-detains-deputy-agriculture-minister-in-durian-export-probe",
+                "source": "freemalaysiatoday.com",
+                "summary": "## The arrest marks the latest expansion in a probe centered on certification procedures for durian shipments to China. HANOI: Vietnamese police detained four people, including the deputy minister of agriculture and environment, on allegations of accepting bribes as part of an expanding investigation into corruption linked to durian exports to China. Deputy minister Hoang Trung is accused of abusing his position by issuing illegal policies, including allegedly creating “sub-licenses” to serve vested interests and generate “particularly large” illicit gains linked to durian exports, according to a statement on the public security ministry’s website. The alleged breaches caused “serious damage” to the legitimate rights and interests of durian growers and export businesses, resulting in “exceptionally” large losses to the state budget and “negatively” impacting the reputation of the entire Vietnamese agricultural sector, the statement said. The arrests mark the latest expansion in a probe centered on certification procedures for durian shipments to China involving the Center for Testing, Certification and Quality Services under the agriculture ministry, NhoNho Technology Co. and Thuy Fruit Co., according to the statement.",
+                "score": 0.018834975
+              }
+            ]
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:54:45"
+    },
+    {
+      "turn_index": 4,
+      "started_at": "2026-07-29T16:55:39",
+      "user": "cho tôi 1 bài báo chủ đề mã hóa an toàn thông tin",
+      "status": "answered",
+      "assistant_text": "Dưới đây là một bài báo liên quan đến chủ đề mã hóa an toàn thông tin:\n\n### Tổng hợp danh sách văn bản về thị trường tài sản mã hóa tại Việt Nam\n- **Nguồn**: [luatvietnam.vn](https://luatvietnam.vn/linh-vuc-khac/tong-hop-danh-sach-van-ban-ve-thi-truong-tai-san-ma-hoa-tai-viet-nam-883-107564-article.html)\n- **Tóm tắt**: Hệ thống công nghệ thông tin của Tổ chức cung cấp dịch vụ tài sản mã hóa phải đáp ứng tiêu chuẩn cấp độ 4 an toàn hệ thống công nghệ thông tin theo quy định pháp luật về an toàn thông tin trước khi đưa vào vận hành, khai thác. Tổ chức, cá nhân tham gia thị trường tài sản mã hóa phải tuân thủ quy định pháp luật có liên quan về phòng, chống rửa tiền, tài trợ khủng bố, an toàn thông tin mạng, và bảo vệ dữ liệu để đảm bảo an ninh, an toàn trên thị trường tài sản mã hóa.\n\nNếu bạn cần thêm thông tin hoặc có câu hỏi khác, hãy cho tôi biết!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "lookup",
+              "args": {
+                "query": "mã hóa an toàn thông tin",
+                "topic": "general",
+                "timeframe": "month",
+                "max_results": 1
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "lookup",
+              "args": {
+                "query": "mã hóa an toàn thông tin",
+                "topic": "general",
+                "timeframe": "month",
+                "max_results": 1
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "mã hóa an toàn thông tin",
+                "topic": "general",
+                "timeframe": "month",
+                "items": [
+                  {
+                    "title": "Tổng hợp danh sách văn bản về thị trường tài sản mã hóa tại Việt Nam",
+                    "url": "https://luatvietnam.vn/linh-vuc-khac/tong-hop-danh-sach-van-ban-ve-thi-truong-tai-san-ma-hoa-tai-viet-nam-883-107564-article.html",
+                    "source": "luatvietnam.vn",
+                    "summary": "- Hệ thống công nghệ thông tin của Tổ chức cung cấp dịch vụ tài sản mã hóa phải đáp ứng tiêu chuẩn cấp độ 4 an toàn hệ thống công nghệ thông tin theo quy định pháp luật về an toàn thông tin trước khi đưa vào vận hành, khai thác.\n\n## 4. Trình tự cấp Giấy phép cung cấp dịch vụ tổ chức thị trường giao dịch tài sản mã hóa\n\nTheo Mục 1 Phần II Phụ lục ban hành kèm theo Quyết định số 96/QĐ-BTC quy định trình tự cấp Giấy phép cung cấp dịch vụ tổ chức thị trường giao dịch tài sản mã hóa như sau: [...] - Tổ chức, cá nhn tham gia thị trường tài sản mã hóa phải tun thủ quy định pháp luật có liên quan về phòng, chống rửa tiền, tài trợ khủng bố, tài trợ phổ biến vũ khí hủy diệt hàng loạt, giao dịch điện tử, an toàn thông tin mạng, an ninh mạng, bảo vệ dữ liệu để bảo đảm an ninh, an toàn trên thị trường tài sản mã hóa và các pháp luật chuyên ngành khác có liên quan. [...] Có tối thiểu 10 nhn sự làm việc tại bộ phận công nghệ có văn bằng, chứng chỉ đào tạo về an toàn thông tin mạng đáp ứng quy định tại Điều 50 Luật an toàn thông tin mạng; có tối thiểu 10 nhn sự có chứng chỉ hành nghề chứng khoán làm việc tại các bộ phận nghiệp vụ khác.",
+                    "score": 0.5174983
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Dưới đây là một bài báo liên quan đến chủ đề mã hóa an toàn thông tin:\n\n### Tổng hợp danh sách văn bản về thị trường tài sản mã hóa tại Việt Nam\n- **Nguồn**: [luatvietnam.vn](https://luatvietnam.vn/linh-vuc-khac/tong-hop-danh-sach-van-ban-ve-thi-truong-tai-san-ma-hoa-tai-viet-nam-883-107564-article.html)\n- **Tóm tắt**: Hệ thống công nghệ thông tin của Tổ chức cung cấp dịch vụ tài sản mã hóa phải đáp ứng tiêu chuẩn cấp độ 4 an toàn hệ thống công nghệ thông tin theo quy định pháp luật về an toàn thông tin trước khi đưa vào vận hành, khai thác. Tổ chức, cá nhân tham gia thị trường tài sản mã hóa phải tuân thủ quy định pháp luật có liên quan về phòng, chống rửa tiền, tài trợ khủng bố, an toàn thông tin mạng, và bảo vệ dữ liệu để đảm bảo an ninh, an toàn trên thị trường tài sản mã hóa.\n\nNếu bạn cần thêm thông tin hoặc có câu hỏi khác, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "mã hóa an toàn thông tin",
+            "topic": "general",
+            "timeframe": "month",
+            "max_results": 1
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "mã hóa an toàn thông tin",
+            "topic": "general",
+            "timeframe": "month",
+            "items": [
+              {
+                "title": "Tổng hợp danh sách văn bản về thị trường tài sản mã hóa tại Việt Nam",
+                "url": "https://luatvietnam.vn/linh-vuc-khac/tong-hop-danh-sach-van-ban-ve-thi-truong-tai-san-ma-hoa-tai-viet-nam-883-107564-article.html",
+                "source": "luatvietnam.vn",
+                "summary": "- Hệ thống công nghệ thông tin của Tổ chức cung cấp dịch vụ tài sản mã hóa phải đáp ứng tiêu chuẩn cấp độ 4 an toàn hệ thống công nghệ thông tin theo quy định pháp luật về an toàn thông tin trước khi đưa vào vận hành, khai thác.\n\n## 4. Trình tự cấp Giấy phép cung cấp dịch vụ tổ chức thị trường giao dịch tài sản mã hóa\n\nTheo Mục 1 Phần II Phụ lục ban hành kèm theo Quyết định số 96/QĐ-BTC quy định trình tự cấp Giấy phép cung cấp dịch vụ tổ chức thị trường giao dịch tài sản mã hóa như sau: [...] - Tổ chức, cá nhn tham gia thị trường tài sản mã hóa phải tun thủ quy định pháp luật có liên quan về phòng, chống rửa tiền, tài trợ khủng bố, tài trợ phổ biến vũ khí hủy diệt hàng loạt, giao dịch điện tử, an toàn thông tin mạng, an ninh mạng, bảo vệ dữ liệu để bảo đảm an ninh, an toàn trên thị trường tài sản mã hóa và các pháp luật chuyên ngành khác có liên quan. [...] Có tối thiểu 10 nhn sự làm việc tại bộ phận công nghệ có văn bằng, chứng chỉ đào tạo về an toàn thông tin mạng đáp ứng quy định tại Điều 50 Luật an toàn thông tin mạng; có tối thiểu 10 nhn sự có chứng chỉ hành nghề chứng khoán làm việc tại các bộ phận nghiệp vụ khác.",
+                "score": 0.5174983
+              }
+            ]
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:55:51"
+    },
+    {
+      "turn_index": 5,
+      "started_at": "2026-07-29T16:56:46",
+      "user": "cho tôi 1 nghien cuu  chủ đề sinh học\n",
+      "status": "answered",
+      "assistant_text": "Dưới đây là một nghiên cứu liên quan đến sinh học:\n\n### Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions\n- **Tác giả**: Ian Vernon, Junli Liu, Michael Goldstein, James Rowe, Jen Topping, Keith Lindsey\n- **Ngày xuất bản**: 21 tháng 7 năm 2016\n- **Tóm tắt**: Nghiên cứu này giới thiệu phương pháp thống kê Bayesian cho phân tích độ không chắc chắn của các mô hình sinh học phức tạp, nhằm giải quyết vấn đề tìm kiếm tham số toàn cầu trong không gian tham số có chiều cao. Phương pháp này được áp dụng cho hai mô hình về sự tương tác hormone trong sự phát triển rễ của Arabidopsis, với 32 tham số tỷ lệ, nhằm xác định các giá trị tham số tỷ lệ dẫn đến sự phù hợp với dữ liệu xu hướng quan sát. Các hậu quả sinh học của sự so sánh này, bao gồm việc đánh giá chức năng gen, cũng được mô tả.\n\n- **Liên kết**: [Xem bài báo](http://arxiv.org/abs/1607.06358v2) | [Tải PDF](https://arxiv.org/pdf/1607.06358v2)\n\nNếu bạn cần thêm thông tin hoặc có câu hỏi khác, hãy cho tôi biết!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "papers",
+              "args": {
+                "query": "biology",
+                "max_results": 1
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "papers",
+              "args": {
+                "query": "biology",
+                "max_results": 1
+              },
+              "result": {
+                "tool": "arxiv_search",
+                "query": "biology",
+                "api_query": "all:biology",
+                "total_results": 62508,
+                "items": [
+                  {
+                    "arxiv_id": "1607.06358v2",
+                    "title": "Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions",
+                    "summary": "Background: Many mathematical models have now been employed across every area of systems biology. These models increasingly involve large numbers of unknown parameters, have complex structure which can result in substantial evaluation time relative to the needs of the analysis, and need to be compared to observed data. The correct analysis of such models usually requires a global parameter search, over a high dimensional parameter space, that incorporates and respects the most important sources of uncertainty. This can be an extremely difficult task, but it is essential for any meaningful inference or prediction to be made about any biological system. It hence represents a fundamental challenge for the whole of systems biology. Results: Bayesian statistical methodology for the uncertainty analysis of complex models is introduced, which is designed to address the high dimensional global parameter search problem. Bayesian emulators that mimic the systems biology model but which are extremely fast to evaluate are embedded within an iterative history match: an efficient method to search high dimensional spaces within a more formal statistical setting, while incorporating major sources of uncertainty. The approach is demonstrated via application to two models of hormonal crosstalk in Arabidopsis root development, which have 32 rate parameters, for which we identify the sets of rate parameter values that lead to acceptable matches to observed trend data. The biological consequences of the resulting comparison, including the evaluation of gene functions, are described.",
+                    "authors": [
+                      "Ian Vernon",
+                      "Junli Liu",
+                      "Michael Goldstein",
+                      "James Rowe",
+                      "Jen Topping",
+                      "Keith Lindsey"
+                    ],
+                    "published": "2016-07-21T15:10:57Z",
+                    "updated": "2018-01-12T11:36:41Z",
+                    "url": "http://arxiv.org/abs/1607.06358v2",
+                    "pdf_url": "https://arxiv.org/pdf/1607.06358v2",
+                    "source": "arxiv.org",
+                    "primary_category": "q-bio.MN",
+                    "categories": [
+                      "q-bio.MN",
+                      "q-bio.CB",
+                      "q-bio.QM",
+                      "stat.AP",
+                      "stat.ME"
+                    ]
+                  }
+                ],
+                "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Dưới đây là một nghiên cứu liên quan đến sinh học:\n\n### Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions\n- **Tác giả**: Ian Vernon, Junli Liu, Michael Goldstein, James Rowe, Jen Topping, Keith Lindsey\n- **Ngày xuất bản**: 21 tháng 7 năm 2016\n- **Tóm tắt**: Nghiên cứu này giới thiệu phương pháp thống kê Bayesian cho phân tích độ không chắc chắn của các mô hình sinh học phức tạp, nhằm giải quyết vấn đề tìm kiếm tham số toàn cầu trong không gian tham số có chiều cao. Phương pháp này được áp dụng cho hai mô hình về sự tương tác hormone trong sự phát triển rễ của Arabidopsis, với 32 tham số tỷ lệ, nhằm xác định các giá trị tham số tỷ lệ dẫn đến sự phù hợp với dữ liệu xu hướng quan sát. Các hậu quả sinh học của sự so sánh này, bao gồm việc đánh giá chức năng gen, cũng được mô tả.\n\n- **Liên kết**: [Xem bài báo](http://arxiv.org/abs/1607.06358v2) | [Tải PDF](https://arxiv.org/pdf/1607.06358v2)\n\nNếu bạn cần thêm thông tin hoặc có câu hỏi khác, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "papers",
+          "args": {
+            "query": "biology",
+            "max_results": 1
+          },
+          "result": {
+            "tool": "arxiv_search",
+            "query": "biology",
+            "api_query": "all:biology",
+            "total_results": 62508,
+            "items": [
+              {
+                "arxiv_id": "1607.06358v2",
+                "title": "Bayesian uncertainty analysis for complex systems biology models: emulation, global parameter searches and evaluation of gene functions",
+                "summary": "Background: Many mathematical models have now been employed across every area of systems biology. These models increasingly involve large numbers of unknown parameters, have complex structure which can result in substantial evaluation time relative to the needs of the analysis, and need to be compared to observed data. The correct analysis of such models usually requires a global parameter search, over a high dimensional parameter space, that incorporates and respects the most important sources of uncertainty. This can be an extremely difficult task, but it is essential for any meaningful inference or prediction to be made about any biological system. It hence represents a fundamental challenge for the whole of systems biology. Results: Bayesian statistical methodology for the uncertainty analysis of complex models is introduced, which is designed to address the high dimensional global parameter search problem. Bayesian emulators that mimic the systems biology model but which are extremely fast to evaluate are embedded within an iterative history match: an efficient method to search high dimensional spaces within a more formal statistical setting, while incorporating major sources of uncertainty. The approach is demonstrated via application to two models of hormonal crosstalk in Arabidopsis root development, which have 32 rate parameters, for which we identify the sets of rate parameter values that lead to acceptable matches to observed trend data. The biological consequences of the resulting comparison, including the evaluation of gene functions, are described.",
+                "authors": [
+                  "Ian Vernon",
+                  "Junli Liu",
+                  "Michael Goldstein",
+                  "James Rowe",
+                  "Jen Topping",
+                  "Keith Lindsey"
+                ],
+                "published": "2016-07-21T15:10:57Z",
+                "updated": "2018-01-12T11:36:41Z",
+                "url": "http://arxiv.org/abs/1607.06358v2",
+                "pdf_url": "https://arxiv.org/pdf/1607.06358v2",
+                "source": "arxiv.org",
+                "primary_category": "q-bio.MN",
+                "categories": [
+                  "q-bio.MN",
+                  "q-bio.CB",
+                  "q-bio.QM",
+                  "stat.AP",
+                  "stat.ME"
+                ]
+              }
+            ],
+            "rate_limit_note": "arXiv may return 429 if called too frequently; this tool waits at least 3 seconds between requests in-process."
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:56:57"
+    },
+    {
+      "turn_index": 6,
+      "started_at": "2026-07-29T16:59:00",
+      "user": "kết quả cuộc thi robocon Việt Nam năm 2026",
+      "status": "answered",
+      "assistant_text": "Hiện tại, không có thông tin cụ thể về kết quả cuộc thi Robocon Việt Nam năm 2026. Tuy nhiên, dưới đây là một số bài viết liên quan:\n\n1. **Lâm Đồng trao giải cuộc thi Sáng tạo Robotics lần thứ I**  \n   - **Nguồn**: [vietnam.vn](https://www.vietnam.vn/lam-dong-trao-giai-cuoc-thi-sang-tao-robotics-lan-thu-i)  \n   - **Tóm tắt**: Vào chiều 28/7, Lễ tổng kết và trao giải thưởng cuộc thi Sáng tạo Robotics tỉnh Lâm Đồng lần thứ I, năm 2026 đã diễn ra tại Trường Đại học Đà Lạt.\n\n2. **Sức hút lớn từ sân chơi Robocon Bắc Ninh**  \n   - **Nguồn**: [baobacninhtv.vn](https://baobacninhtv.vn/suc-hut-lon-tu-san-choi-robocon-bac-ninh-postid451049.bbg)  \n   - **Tóm tắt**: Bài viết này đề cập đến sự hấp dẫn của cuộc thi Robocon tại Bắc Ninh, nhưng không cung cấp thông tin cụ thể về kết quả.\n\nNếu bạn cần thêm thông tin hoặc có câu hỏi khác, hãy cho tôi biết!",
+      "rounds": [
+        {
+          "round": 1,
+          "assistant_text": null,
+          "tool_calls": [
+            {
+              "name": "lookup",
+              "args": {
+                "query": "kết quả cuộc thi robocon Việt Nam 2026",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              }
+            }
+          ],
+          "tool_results": [
+            {
+              "tool": "lookup",
+              "args": {
+                "query": "kết quả cuộc thi robocon Việt Nam 2026",
+                "topic": "news",
+                "timeframe": "day",
+                "max_results": 5
+              },
+              "result": {
+                "tool": "web_search",
+                "query": "kết quả cuộc thi robocon Việt Nam 2026",
+                "topic": "news",
+                "timeframe": "day",
+                "items": [
+                  {
+                    "title": "Lâm Đồng trao giải cuộc thi Sáng tạo Robotics lần thứ I",
+                    "url": "https://www.vietnam.vn/lam-dong-trao-giai-cuoc-thi-sang-tao-robotics-lan-thu-i",
+                    "source": "vietnam.vn",
+                    "summary": "RỰC RỠ SẮC MÀU VÒNG CHUNG KẾT TOÀN QUỐC HỘI THI “TIẾNG HÁT SEN VÀNG 2026” HƯỚNG TỚI CHÀO MỪNG KỶ NIỆM 25 NĂM THÀNH LẬP VÀ PHÁT TRIỂN TẬP ĐOÀN HOA SEN 08/8/2026\n\n### RỰC RỠ SẮC MÀU VÒNG CHUNG KẾT TOÀN QUỐC HỘI THI “TIẾNG HÁT SEN VÀNG 2026” HƯỚNG TỚI CHÀO MỪNG KỶ NIỆM 25 NĂM THÀNH LẬP VÀ PHÁT TRIỂN TẬP ĐOÀN HOA SEN 08/8/2026\n\nViệt Nam\n3 giờ trước\n\nBroadway Place - sống giữa tm điểm trải nghiệm của Capital Square\n\n### Broadway Place - sống giữa tm điểm trải nghiệm của Capital Square [...] # Lm Đồng trao giải cuộc thi Sáng tạo Robotics lần thứ I\n\n### Chiều 28/7, Lễ tổng kết và trao giải thưởng cuộc thi Sáng tạo Robotics tỉnh Lm Đồng lần thứ I, năm 2026 diễn ra tại Trường Đại học Đà Lạt.\n\nBáo Lm ĐồngBáo Lm Đồng•28/07/2026\n\nlanh-dao-ban-tuyen-giao-va-dan-van-tinh-uy-so-giao-duc-va-dao-tao-trao-giai-nhat-cho-cac-doi-tham-du-bang-r1(1).jpg \n\nLãnh đạo Ban Tuyên giáo và Dn vận Tỉnh ủy, Sở Giáo dục và Đào tạo trao giải Nhất ở bảng R1 [...] ### Giá vàng hôm nay 29/07/2026: SJC 136,5 - 140,5 triệu đồng/lượng, giảm 1 triệu\n\nBáo Nghệ An\n3 giờ trước\n\n## Google Trends\n\nTuyển Việt Nam chung bảng với Thái Lan ở FIFA ASEAN Cup 2026\n\n### Tuyển Việt Nam chung bảng với Thái Lan ở FIFA ASEAN Cup 2026\n\nBáo Tuổi Trẻ\n2 giờ trước\n\nXe khách bất ngờ bốc cháy dữ dội gần trường đại học, nhiều tiếng nổ phát ra\n\n### Xe khách bất ngờ bốc cháy dữ dội gần trường đại học, nhiều tiếng nổ phát ra\n\nVietNamNet\n2 giờ trước",
+                    "score": 0.60245985
+                  },
+                  {
+                    "title": "Sức hút lớn từ sân chơi Robocon Bắc Ninh",
+                    "url": "https://baobacninhtv.vn/suc-hut-lon-tu-san-choi-robocon-bac-ninh-postid451049.bbg",
+                    "source": "baobacninhtv.vn",
+                    "summary": "Báo Bắc Ninh: Tin tức mới nhất, Thông tin nhanh & chính xác được cập nhật hàng giờ. Đọc Báo Bắc Ninh: Trong tỉnh, trong nước & Thế giới nóng nhất trong ngày",
+                    "score": 0.10664427
+                  },
+                  {
+                    "title": "Bộ KH&CN đẩy mạnh số hóa công tác quản lý ngân sách",
+                    "url": "https://www.vietnam.vn/bo-kh-cn-day-manh-so-hoa-cong-tac-quan-ly-ngan-sach",
+                    "source": "vietnam.vn",
+                    "summary": "Thứ trưởng Bộ KH&CN Bùi Hoàng Phương nhấn mạnh yêu cầu đẩy mạnh số hóa công tác quản lý ngân sách. Theo đó, Bộ KH&CN sẽ xây dựng hệ thống số hóa dữ liệu,",
+                    "score": 0.010694812
+                  },
+                  {
+                    "title": "Công an xã Đồng Kho tăng cường phòng, chống tội phạm cá độ bóng đá",
+                    "url": "https://www.vietnam.vn/cong-an-xa-dong-kho-tang-cuong-phong-chong-toi-pham-ca-do-bong-da",
+                    "source": "vietnam.vn",
+                    "summary": "Nhằm chủ động phòng ngừa, đấu tranh với tội phạm và vi phạm pháp luật liên quan đến cá độ bóng đá, Công an xã Đồng Kho đã triển khai đồng bộ các biện pháp",
+                    "score": 0.0069745104
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "round": 2,
+          "assistant_text": "Hiện tại, không có thông tin cụ thể về kết quả cuộc thi Robocon Việt Nam năm 2026. Tuy nhiên, dưới đây là một số bài viết liên quan:\n\n1. **Lâm Đồng trao giải cuộc thi Sáng tạo Robotics lần thứ I**  \n   - **Nguồn**: [vietnam.vn](https://www.vietnam.vn/lam-dong-trao-giai-cuoc-thi-sang-tao-robotics-lan-thu-i)  \n   - **Tóm tắt**: Vào chiều 28/7, Lễ tổng kết và trao giải thưởng cuộc thi Sáng tạo Robotics tỉnh Lâm Đồng lần thứ I, năm 2026 đã diễn ra tại Trường Đại học Đà Lạt.\n\n2. **Sức hút lớn từ sân chơi Robocon Bắc Ninh**  \n   - **Nguồn**: [baobacninhtv.vn](https://baobacninhtv.vn/suc-hut-lon-tu-san-choi-robocon-bac-ninh-postid451049.bbg)  \n   - **Tóm tắt**: Bài viết này đề cập đến sự hấp dẫn của cuộc thi Robocon tại Bắc Ninh, nhưng không cung cấp thông tin cụ thể về kết quả.\n\nNếu bạn cần thêm thông tin hoặc có câu hỏi khác, hãy cho tôi biết!",
+          "tool_calls": [],
+          "tool_results": []
+        }
+      ],
+      "tool_events": [
+        {
+          "tool": "lookup",
+          "args": {
+            "query": "kết quả cuộc thi robocon Việt Nam 2026",
+            "topic": "news",
+            "timeframe": "day",
+            "max_results": 5
+          },
+          "result": {
+            "tool": "web_search",
+            "query": "kết quả cuộc thi robocon Việt Nam 2026",
+            "topic": "news",
+            "timeframe": "day",
+            "items": [
+              {
+                "title": "Lâm Đồng trao giải cuộc thi Sáng tạo Robotics lần thứ I",
+                "url": "https://www.vietnam.vn/lam-dong-trao-giai-cuoc-thi-sang-tao-robotics-lan-thu-i",
+                "source": "vietnam.vn",
+                "summary": "RỰC RỠ SẮC MÀU VÒNG CHUNG KẾT TOÀN QUỐC HỘI THI “TIẾNG HÁT SEN VÀNG 2026” HƯỚNG TỚI CHÀO MỪNG KỶ NIỆM 25 NĂM THÀNH LẬP VÀ PHÁT TRIỂN TẬP ĐOÀN HOA SEN 08/8/2026\n\n### RỰC RỠ SẮC MÀU VÒNG CHUNG KẾT TOÀN QUỐC HỘI THI “TIẾNG HÁT SEN VÀNG 2026” HƯỚNG TỚI CHÀO MỪNG KỶ NIỆM 25 NĂM THÀNH LẬP VÀ PHÁT TRIỂN TẬP ĐOÀN HOA SEN 08/8/2026\n\nViệt Nam\n3 giờ trước\n\nBroadway Place - sống giữa tm điểm trải nghiệm của Capital Square\n\n### Broadway Place - sống giữa tm điểm trải nghiệm của Capital Square [...] # Lm Đồng trao giải cuộc thi Sáng tạo Robotics lần thứ I\n\n### Chiều 28/7, Lễ tổng kết và trao giải thưởng cuộc thi Sáng tạo Robotics tỉnh Lm Đồng lần thứ I, năm 2026 diễn ra tại Trường Đại học Đà Lạt.\n\nBáo Lm ĐồngBáo Lm Đồng•28/07/2026\n\nlanh-dao-ban-tuyen-giao-va-dan-van-tinh-uy-so-giao-duc-va-dao-tao-trao-giai-nhat-cho-cac-doi-tham-du-bang-r1(1).jpg \n\nLãnh đạo Ban Tuyên giáo và Dn vận Tỉnh ủy, Sở Giáo dục và Đào tạo trao giải Nhất ở bảng R1 [...] ### Giá vàng hôm nay 29/07/2026: SJC 136,5 - 140,5 triệu đồng/lượng, giảm 1 triệu\n\nBáo Nghệ An\n3 giờ trước\n\n## Google Trends\n\nTuyển Việt Nam chung bảng với Thái Lan ở FIFA ASEAN Cup 2026\n\n### Tuyển Việt Nam chung bảng với Thái Lan ở FIFA ASEAN Cup 2026\n\nBáo Tuổi Trẻ\n2 giờ trước\n\nXe khách bất ngờ bốc cháy dữ dội gần trường đại học, nhiều tiếng nổ phát ra\n\n### Xe khách bất ngờ bốc cháy dữ dội gần trường đại học, nhiều tiếng nổ phát ra\n\nVietNamNet\n2 giờ trước",
+                "score": 0.60245985
+              },
+              {
+                "title": "Sức hút lớn từ sân chơi Robocon Bắc Ninh",
+                "url": "https://baobacninhtv.vn/suc-hut-lon-tu-san-choi-robocon-bac-ninh-postid451049.bbg",
+                "source": "baobacninhtv.vn",
+                "summary": "Báo Bắc Ninh: Tin tức mới nhất, Thông tin nhanh & chính xác được cập nhật hàng giờ. Đọc Báo Bắc Ninh: Trong tỉnh, trong nước & Thế giới nóng nhất trong ngày",
+                "score": 0.10664427
+              },
+              {
+                "title": "Bộ KH&CN đẩy mạnh số hóa công tác quản lý ngân sách",
+                "url": "https://www.vietnam.vn/bo-kh-cn-day-manh-so-hoa-cong-tac-quan-ly-ngan-sach",
+                "source": "vietnam.vn",
+                "summary": "Thứ trưởng Bộ KH&CN Bùi Hoàng Phương nhấn mạnh yêu cầu đẩy mạnh số hóa công tác quản lý ngân sách. Theo đó, Bộ KH&CN sẽ xây dựng hệ thống số hóa dữ liệu,",
+                "score": 0.010694812
+              },
+              {
+                "title": "Công an xã Đồng Kho tăng cường phòng, chống tội phạm cá độ bóng đá",
+                "url": "https://www.vietnam.vn/cong-an-xa-dong-kho-tang-cuong-phong-chong-toi-pham-ca-do-bong-da",
+                "source": "vietnam.vn",
+                "summary": "Nhằm chủ động phòng ngừa, đấu tranh với tội phạm và vi phạm pháp luật liên quan đến cá độ bóng đá, Công an xã Đồng Kho đã triển khai đồng bộ các biện pháp",
+                "score": 0.0069745104
+              }
+            ]
+          }
+        }
+      ],
+      "ended_at": "2026-07-29T16:59:13"
+    }
+  ]
+}
